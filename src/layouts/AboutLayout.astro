@@ -4,6 +4,7 @@ import Footer from "@/components/Footer.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Layout from "./Layout.astro";
 import { SITE } from "@/config";
+import Socials from "@/components/Socials.astro";
 
 export interface Props {
   frontmatter: {
@@ -22,6 +23,7 @@ const { frontmatter } = Astro.props;
     <section id="about" class="prose mb-28 max-w-4xl prose-img:border-0">
       <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
       <slot />
+      <Socials />
     </section>
   </main>
   <Footer />

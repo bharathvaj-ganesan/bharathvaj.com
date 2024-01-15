@@ -1,34 +1,41 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "About"
+title: "👋 About Me"
+---
+ 
+I'm a **software engineer and engineering leader** passionate about building purposeful products with strong technical depth.  
+I graduated in **Computer Science Engineering (2017)** driven by a deep curiosity for how software systems work — a mindset that still fuels me today.
+
 ---
 
-AstroPaper is a minimal, responsive and SEO-friendly Astro blog theme. I designed and crafted this based on [my personal blog](https://satnaing.dev/blog).
+### 💼 Current Role @Chargebee
+I'm currently a **Lead Software Engineer at Chargebee**, leading AI initiatives such as:  
+- 🤖 **AI Agents**  
+- 🧠 **Copilot experiences**  
+- 🛠️ Internal AI tools to improve engineering and business productivity
 
-This theme is aimed to be accessible out of the box. Light and dark mode are supported by
-default and additional color schemes can also be configured.
+---
 
-This theme is self-documented \_ which means articles/posts in this theme can also be considered as documentations. So, see the documentation for more info.
+### 🛠️ Technical & Leadership Experience  
+Over the last **6+ years**, I’ve worked across:  
+- 🌱 Early-stage startups  
+- 🏢 Large-scale enterprise environments  
+- 🏗️ Built next-gen web apps from scratch  
+- 🧑‍💻 Improved developer experience across the board  
 
-<div>
-  <img src="/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
-</div>
+I’ve taken on roles as both an **individual contributor** and an **engineering manager**, often switching between hands-on coding and high-level architectural thinking.
 
-## Tech Stack
+---
 
-This theme is written in vanilla JavaScript (+ TypeScript for type checking) and a little bit of ReactJS for some interactions. TailwindCSS is used for styling; and Markdown is used for blog contents.
+### 🧵 What Drives Me  
+I'm known for:  
+- 🎯 A bias toward **engineering craftsmanship**  
+- 🔍 Diving deep into technical and product details  
+- ⚖️ Balancing **speed, quality, and long-term impact**  
+- ✍️ Actively sharing my learnings through blogs and writing  
 
-## Features
+---
 
-Here are certain features of this site.
-
-- fully responsive and accessible
-- SEO-friendly
-- light & dark mode
-- fuzzy search
-- super fast performance
-- draft posts
-- pagination
-- sitemap & rss feed
-- highly customizable
-
+### 🌐 Let’s Connect  
+I love exchanging ideas and learning with others in the tech community.  
+Follow me on my socials — always up for a good engineering convo!
