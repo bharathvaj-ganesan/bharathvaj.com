@@ -8,7 +8,7 @@ I graduated in **Computer Science Engineering (2017)** driven by a deep curiosit
 
 ---
 
-### 💼 Current Role @Chargebee
+### 💼 Current Role
 I'm currently a **Lead Software Engineer at Chargebee**, leading AI initiatives such as:  
 - 🤖 **AI Agents**  
 - 🧠 **Copilot experiences**  
