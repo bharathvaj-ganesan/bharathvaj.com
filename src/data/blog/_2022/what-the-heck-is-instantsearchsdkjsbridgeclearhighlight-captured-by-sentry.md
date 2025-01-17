@@ -6,7 +6,6 @@ draft: false
 pubDatetime: 2022-03-03T04:58:08.065Z
 description: Learn in detail about this instantSearchSDKJSBridgeClearHighlight
   error to know about why this occurs.
-category: TIPS
 tags:
   - bug
   - sentry

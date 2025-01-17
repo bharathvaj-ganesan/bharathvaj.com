@@ -6,7 +6,6 @@ draft: false
 pubDatetime: 2021-04-25T10:50:08.350Z
 description: Learn how to publish NodeJS CLI application on the popular Homebrew
   package manager using Github
-category: snippets
 tags:
   - homebrew
   - npm

@@ -3,9 +3,8 @@
 title: Integrate Chargebee and Kafka Using Upstash Webhook API
 slug: integrate-chargebee-kafka-upstash
 draft: false
-pubDatetime: 2022-02-24T03:43:57.425Z
+pubDatetime: 2022-12-18T01:43:57.425Z
 description: Discover the use cases by integrating Chargebee with Kafka
-category: productivity
 tags:
   - Chargebee
   - Kafka

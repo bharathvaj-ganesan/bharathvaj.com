@@ -5,7 +5,6 @@ slug: focus-vs-within-vs-visible
 draft: false
 pubDatetime: 2021-05-02T13:00:00.000Z
 description: What are these pseudo-classes and how does each differ from the other
-category: UX
 tags:
   - css
   - webdev

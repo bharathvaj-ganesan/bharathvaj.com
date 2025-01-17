@@ -5,7 +5,6 @@ slug: scaffolding-new-project-using-template
 draft: false
 pubDatetime: 2021-03-06T00:55:18.990Z
 description: Learn how to scaffold new project using git template repository.
-category: productivity
 tags:
   - git
   - npm

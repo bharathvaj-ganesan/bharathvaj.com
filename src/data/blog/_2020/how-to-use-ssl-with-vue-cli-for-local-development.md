@@ -6,7 +6,6 @@ draft: false
 pubDatetime: 2020-10-03T16:00:21.780Z
 description: Learn how to serve a local VueJS app via HTTPS. In this article, we
   will be setting up HTTPS in development for our app with our SSL certificate.
-category: snippets
 tags:
   - vue
   - vue-cli

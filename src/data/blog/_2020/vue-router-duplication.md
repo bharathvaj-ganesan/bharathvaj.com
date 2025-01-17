@@ -4,7 +4,6 @@ pubDatetime: 2020-10-03T16:00:21.780Z
 template: 'post'
 draft: false
 slug: 'vue-router-duplication/'
-category: 'snippets'
 tags:
   - 'vue'
   - 'vue-router'

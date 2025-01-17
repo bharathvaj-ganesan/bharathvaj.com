@@ -5,7 +5,6 @@ slug: keep-two-branches-in-sync
 draft: false
 pubDatetime: 2021-04-02T13:30:00.000Z
 description: Learn how to keep two branches in sync using GitHub Action
-category: productivity
 tags:
   - git
   - GitHub
