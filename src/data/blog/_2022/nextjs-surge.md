@@ -5,7 +5,7 @@ draft: false
 pubDatetime: 2022-12-23T03:43:57.425Z
 description: Learn how to deploy NextJS to surge.sh
 tags:
-  - nextjs
+  - Nextjs
   - surge
   - hosting
 ---
