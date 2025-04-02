@@ -10,8 +10,6 @@ tags:
   - codeartifact
 ---
 
-# 🚀 Easily Publish Private Packages to AWS CodeArtifact via GitHub Actions Workflow
-
 You can seamlessly publish private packages to AWS CodeArtifact using GitHub Actions. This guide walks you through:
 
 - **Phase 1**: AWS Console setup
