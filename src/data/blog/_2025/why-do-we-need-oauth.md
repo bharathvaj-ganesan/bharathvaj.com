@@ -42,8 +42,6 @@ Here’s why that’s a terrible idea:
 - **Bad User Experience**  
   Now users have to trust every app with their passwords. That’s a security risk, and users start feeling nervous or annoyed.
 
----
-
 ## OAuth to the Rescue
 
 OAuth (Open Authorization) is the protocol that fixes this.
@@ -57,8 +55,6 @@ Instead of giving away your Dropbox password, the PDF app redirects you to Dropb
 
 You never shared your password. The app only gets the permission it *needs*, and Dropbox can revoke that permission anytime.
 
----
-
 ## Benefits of OAuth in This Scenario
 
 Let’s revisit the PDF app with OAuth implemented:
@@ -70,6 +66,24 @@ Let’s revisit the PDF app with OAuth implemented:
 
 This is **secure delegation**—the whole point of OAuth.
 
----
 
-##
+## Beyond Dropbox: OAuth Is Everywhere
+
+This pattern powers almost every secure integration you see today:
+
+- Google Sign-In
+- Connect to Slack
+- Share to Twitter
+- GitHub integrations
+- Zoom + Calendar syncing
+
+You’re not giving your password to every third-party tool. You’re authorizing specific, limited actions through OAuth.
+
+## Final Thoughts
+
+OAuth exists because **trusting every app with your passwords doesn’t scale**. It’s risky, clumsy, and unnecessary in 2025.
+
+Next time an app asks for your Dropbox password, close that tab and run.
+
+And if you’re building an app?
+**Use OAuth. Your users will thank you—and so will their data.**
