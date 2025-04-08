@@ -1,7 +1,7 @@
 ---
 
 title: How to keep two branches in sync on Github
-slug: /blog/keep-two-branches-in-sync
+slug: keep-two-branches-in-sync
 draft: false
 pubDatetime: 2021-04-02T13:30:00.000Z
 description: Learn how to keep two branches in sync using GitHub Action

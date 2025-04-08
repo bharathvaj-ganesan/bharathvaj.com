@@ -1,7 +1,7 @@
 ---
 
 title: Speedup your Jest tests in GitHub Actions
-slug: /blog/speedup-jest-github-actions
+slug: speedup-jest-github-actions
 draft: false
 pubDatetime: 2022-02-24T03:43:57.425Z
 description: Learn how to speed up your jest tests in GH Actions.

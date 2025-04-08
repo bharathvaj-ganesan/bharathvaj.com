@@ -1,7 +1,7 @@
 ---
 
 title: Scaffolding a new project based on the existing git template repository
-slug: /blog/scaffolding-new-project-using-template
+slug: scaffolding-new-project-using-template
 draft: false
 pubDatetime: 2021-03-06T00:55:18.990Z
 description: Learn how to scaffold new project using git template repository.

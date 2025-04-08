@@ -1,7 +1,7 @@
 ---
 
 title: How to publish your NodeJS application on Homebrew
-slug: /blog/how-to-publish-your-nodejs-project-on-homebrew
+slug: how-to-publish-your-nodejs-project-on-homebrew
 draft: false
 pubDatetime: 2021-04-25T10:50:08.350Z
 description: Learn how to publish NodeJS CLI application on the popular Homebrew

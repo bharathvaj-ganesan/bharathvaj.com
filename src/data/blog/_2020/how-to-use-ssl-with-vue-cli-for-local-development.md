@@ -1,7 +1,7 @@
 ---
 
 title: ' How to use SSL with Vue CLI for local development'
-slug: /blog/use-ssl-with-vue-cli-locally
+slug: use-ssl-with-vue-cli-locally
 draft: false
 pubDatetime: 2020-10-03T16:00:21.780Z
 description: Learn how to serve a local VueJS app via HTTPS. In this article, we

@@ -3,7 +3,7 @@ title: 'How to fix NavigationDuplicated Vue Router error'
 pubDatetime: 2020-10-03T16:00:21.780Z
 template: 'post'
 draft: false
-slug: '/blog/vue-router-duplication/'
+slug: 'vue-router-duplication/'
 category: 'snippets'
 tags:
   - 'vue'
