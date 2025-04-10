@@ -4,7 +4,6 @@ export const SITE = {
   profile: "https://bharathvaj.com/",
   desc: "A personal blog sharing insights, updates, and perspectives on tech, software engineering, and everything in between — straight from the desk of a curious builder.",
   title: "Bharathvaj Ganesan",
-  ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 4,
