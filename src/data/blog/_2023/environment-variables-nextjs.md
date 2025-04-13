@@ -6,7 +6,7 @@ draft: false
 pubDatetime: 2023-02-05T02:58:08.065Z
 description: Learn how to setup env variable validations in NextJS
 tags:
-  - Nextjs
+  - nextjs
   - Webhooks
   - System Design
 ---

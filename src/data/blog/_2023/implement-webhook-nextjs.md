@@ -6,7 +6,7 @@ draft: false
 pubDatetime: 2023-01-04T02:58:08.065Z
 description: Let us implement webhook at scale in NextJS
 tags:
-  - Nextjs
+  - nextjs
   - Webhooks
   - System Design
 ---
