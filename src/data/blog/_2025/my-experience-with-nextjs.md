@@ -26,7 +26,9 @@ Here’s my personal experience with Next.js — what started as admiration grad
 
 ## 1. Ever Changing Principle
 
-Next.js has become increasingly difficult to rely on due to its constantly shifting direction. It started as a champion of Jamstack and static site generation, but over time, pivoted toward serverless architecture and now heavily promotes server-side rendering (SSR). These changes contradict its original philosophy and result in frequent shifts to the framework’s core foundations—forcing developers to constantly relearn and adapt.
+Next.js has become increasingly difficult to rely on due to its constantly shifting direction. It started as a champion of Jamstack and static site generation, but over time, pivoted toward serverless architecture and heavily promotes server-side rendering (SSR). Now, they’re moving away from serverless again in favor of microVMs.
+
+These changes contradict its original philosophy and result in frequent shifts to the framework’s core foundations—forcing developers to constantly relearn and adapt.
 
 ## 2. From Simple to Spaceship 🚀 (Overengineering, Anyone?)
 

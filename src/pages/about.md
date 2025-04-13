@@ -3,20 +3,14 @@ layout: ../layouts/AboutLayout.astro
 title: "👋 About Me"
 ---
  
-I'm a **software engineer** with 6+ years of experience, passionate about building purposeful products with strong technical depth. I graduated in **Computer Science Engineering** and have always been driven by a deep curiosity about how software systems work — a mindset that continues to drive me today.
+Ever since I wrote my first "Hello World," I've been hooked on understanding how software really works. That curiosity led me to a degree in Computer Science Engineering, and over the past 7+ years, it’s evolved into a passion for building purposeful, technically robust products.
 
----
-
-### 💼 Current Role
-I'm currently a **Lead Software Engineer at Chargebee**, leading AI initiatives such as:  
-- 🤖 **AI Agents**  
-- 🧠 **Copilot experiences**  
-- 🛠️ Internal AI tools to improve engineering and business productivity
+Today, I’m a **Senior Lead Software Engineer at Chargebee**, where I lead AI initiatives — from building intelligent agents to crafting internal tools that supercharge engineering and business productivity.
 
 ---
 
 ### 🛠️ Technical & Leadership Experience  
-Over the last **6+ years**, I’ve worked across:  
+Over the last **7+ years**, I’ve worked across:  
 - 🌱 Early-stage startups  
 - 🏢 Large-scale enterprise environments  
 - 🏗️ Built next-gen web apps from scratch  
