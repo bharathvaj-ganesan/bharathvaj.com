@@ -85,7 +85,7 @@ And don’t follow up with `.json()` or `.text()`:
 - The **stream remains open**, which can lead to memory leaks or unused network connections.
 - The browser **won’t read or parse** anything further unless you explicitly do it.
 
-## 🤔 How to verify this ?
+## 🤔 How to verify this?
 
 You can check by opening the network tab. You will see a blank screen in the response tab.
 

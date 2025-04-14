@@ -1,5 +1,5 @@
 ---
-title: How `Localhost` Works ?
+title: How `Localhost` Works?
 slug: how-localhost-works
 draft: false
 pubDatetime: 2025-04-11T10:00:00.000Z
