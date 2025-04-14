@@ -5,7 +5,7 @@ title: "👋 About Me"
  
 Ever since I wrote my first "Hello World," I've been hooked on understanding how software really works. That curiosity led me to a degree in Computer Science Engineering, and over the past 7+ years, it’s evolved into a passion for building purposeful, technically robust products.
 
-Today, I’m a **Senior Lead Software Engineer at Chargebee**, where I lead AI initiatives — from building intelligent agents to crafting internal tools that supercharge engineering and business productivity.
+Currently serving as a **Senior Lead Software Engineer at [Chargebee](https://chargebee.com)**, I lead Applied AI initiatives — building intelligent Copilots, scalable AI workflows, and a robust AI platform that accelerates innovation across the organization.
 
 ---
 
