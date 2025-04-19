@@ -1,5 +1,5 @@
 ---
-title: Creating an IAM Role with GitHub as a Web Identity Provider in AWS
+title: Creating an AWS IAM Role with GitHub as a Web Identity Provider
 slug: create-iam-role-with-github-web-identity-provider
 draft: false
 pubDatetime: 2025-04-15T04:00:00.000Z
