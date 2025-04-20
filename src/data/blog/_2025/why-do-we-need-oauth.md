@@ -12,6 +12,10 @@ tags:
   - security
 ---
 
+There are two perspective here when explaining why do we need OAuth. Lets see the user view first.
+
+## User Perspective
+
 Imagine this: you’re using a slick new PDF editing app that lets you annotate, sign, and compress PDFs. Once you’re done editing, it prompts you:
 
 > **“Enter your Dropbox email and password to upload the file.”**
@@ -22,7 +26,7 @@ This moment, right here, is exactly **why we need OAuth**.
 
 ---
 
-## The Problem With Asking for Passwords
+### The Problem With Asking for Passwords
 
 When an app asks for your Dropbox **username and password**, it’s basically saying:
 
@@ -42,7 +46,7 @@ Here’s why that’s a terrible idea:
 - **Bad User Experience**  
   Now users have to trust every app with their passwords. That’s a security risk, and users start feeling nervous or annoyed.
 
-## OAuth to the Rescue
+### OAuth to the Rescue
 
 OAuth (Open Authorization) is the protocol that fixes this.
 
@@ -55,7 +59,7 @@ Instead of giving away your Dropbox password, the PDF app redirects you to Dropb
 
 You never shared your password. The app only gets the permission it *needs*, and Dropbox can revoke that permission anytime.
 
-## Benefits of OAuth in This Scenario
+### Benefits of OAuth in This Scenario
 
 Let’s revisit the PDF app with OAuth implemented:
 
@@ -67,7 +71,7 @@ Let’s revisit the PDF app with OAuth implemented:
 This is **secure delegation**—the whole point of OAuth.
 
 
-## Beyond Dropbox: OAuth Is Everywhere
+### Beyond Dropbox: OAuth Is Everywhere
 
 This pattern powers almost every secure integration you see today:
 
@@ -78,6 +82,11 @@ This pattern powers almost every secure integration you see today:
 - Zoom + Calendar syncing
 
 You’re not giving your password to every third-party tool. You’re authorizing specific, limited actions through OAuth.
+
+
+## API Developer Perspective
+
+For the API developer, it will difficult to differentiate the login requests. Is it coming from the real user or from a third party application. It will be a bloody nightmare.
 
 ## Final Thoughts
 
