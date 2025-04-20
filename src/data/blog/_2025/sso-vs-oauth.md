@@ -16,10 +16,12 @@ If you're building modern web or mobile apps, chances are you've come across ter
 
 ### TL;DR
 
+OAuth was not created to be a single-sign-on protocol, it has been extended to be used as one through things like OpenID Connect.
+
 | Concept     | Purpose                        | Deals With      | Example                        |
 |-------------|--------------------------------|------------------|--------------------------------|
 | SSO         | One login for multiple apps    | Authentication   | Gmail + YouTube login         |
-| OAuth       | Grant access to user data      | Authorization    | Access Google Drive           |
+| OAuth       | Accessing APIs                 | Authorization    | Access Google Drive           |
 | OpenID Connect | Verify user identity       | Authentication   | "Login with Google" button    |
 
 
@@ -47,7 +49,7 @@ Simplifies authentication.
 Allows apps to access a user’s data **without** needing their password.
 
 **Use case:**  
-A calendar app accessing your Google Calendar.
+A Photo editor app using your Google Drive.
 
 **Powered by:**  
 **OAuth 2.0** protocol.
@@ -63,7 +65,7 @@ Secure **authorization** (not authentication).
 Adds **authentication** on top of OAuth 2.0 — it confirms the user's identity and provides their profile information.
 
 **Use case:**  
-Logging in to a third-party app with your Google account.
+Logging in to a third-party app with your Google account. Fetching user identity information like email, profile photo etc.
 
 **Powered by:**  
 **OAuth 2.0 + ID token** (a JWT containing user info).
