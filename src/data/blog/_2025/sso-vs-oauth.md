@@ -84,3 +84,7 @@ Handles **who the user is**, not just what data they can access.
    ➤ This is **OAuth-based Authorization** to access Google Drive APIs.
 
 
+## References
+
+- [OAuth](https://oauth.net/2/)
+- [SSO](https://en.wikipedia.org/wiki/Single_sign-on)

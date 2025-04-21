@@ -12,7 +12,7 @@ tags:
   - security
 ---
 
-There are two perspective here when explaining why do we need OAuth. Lets see the user view first.
+There are two perspective here when explaining why do we need [OAuth](https://oauth.net/2/). Lets see the user view first.
 
 ## User Perspective
 
