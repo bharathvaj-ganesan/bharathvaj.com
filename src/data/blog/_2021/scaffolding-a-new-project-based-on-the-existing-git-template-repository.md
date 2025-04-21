@@ -8,8 +8,7 @@ description: Learn how to scaffold new project using git template repository.
 tags:
   - git
   - npm
-  - github
-  - npx
+  - GitHub
 ---
 
 As a developer in this open-source era, we often try to explore libraries/frameworks/project codebases and mostly starter template for kick starting personal projects. The most common way is to clone the repository using the *git clone* CLI command.

@@ -7,9 +7,7 @@ pubDatetime: 2021-05-02T13:00:00.000Z
 description: What are these pseudo-classes and how does each differ from the other
 tags:
   - css
-  - webdev
-  - learning
-  - beginners
+  - Web Development
 ---
 Today, we will be discussing focusable pseudo-classes supported by modern browsers, but before we dive deeper, it's worth understanding what *focusable* and *tabbable* means in the context of CSS.
 

@@ -6,7 +6,7 @@ pubDatetime: 2025-04-16T01:10:00.000Z
 description: A concise guide to configure AWS credentials and automate publishing Node.js packages to AWS CodeArtifact using GitHub Actions.
 tags:
   - aws
-  - github-actions
+  - GitHub Actions
   - codeartifact
 ---
 

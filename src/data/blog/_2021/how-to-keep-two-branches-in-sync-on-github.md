@@ -7,8 +7,7 @@ pubDatetime: 2021-04-02T13:30:00.000Z
 description: Learn how to keep two branches in sync using GitHub Action
 tags:
   - git
-  - GitHub
-  - GitHub Action
+  - GitHub Actions
 ---
 [GitHub Actions](https://github.com/features/actions) allows you to automate, customize and execute your software development workflows inside your repository. 
 

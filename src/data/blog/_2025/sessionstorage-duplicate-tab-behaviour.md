@@ -5,7 +5,7 @@ draft: false
 pubDatetime: 2025-04-14T02:00:00.000Z
 description: Understand how sessionStorage behaves when duplicating browser tabs, with practical examples and tips for web developers.
 tags:
-  - browser apis
+  - Browser APIs
   - javascript
 ---
 

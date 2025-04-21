@@ -6,7 +6,7 @@ pubDatetime: 2025-04-15T04:00:00.000Z
 description: Learn how to create an IAM role that allows GitHub Actions to authenticate using OIDC as a Web Identity Provider in AWS IAM.
 tags:
   - aws
-  - github-actions
+  - GitHub Actions
   - iam
 ---
 

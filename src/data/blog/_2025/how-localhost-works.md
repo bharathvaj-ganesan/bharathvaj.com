@@ -6,10 +6,7 @@ pubDatetime: 2025-04-11T10:00:00.000Z
 description: A simple yet powerful deep dive into how localhost and 127.0.0.1 work under the hood for developers.
 tags:
   - networking
-  - javascript
-  - backend
   - localhost
-  - developer-tools
 ---
 
 Whether you're running a front end dev server or testing a backend API, chances are you’ve typed `localhost:3000` in your browser. But have you ever stopped to wonder—what *actually* happens when you do that?

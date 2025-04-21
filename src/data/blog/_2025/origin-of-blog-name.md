@@ -5,8 +5,6 @@ draft: false
 pubDatetime: 2025-04-17T04:00:00.000Z
 description: A fun fact about the origin of the word “blog” — from “weblog” to the modern-day “blog.”
 tags:
-  - blog
-  - internet-history
   - fact-series
 ---
 

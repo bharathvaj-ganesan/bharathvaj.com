@@ -7,8 +7,7 @@ pubDatetime: 2022-02-24T03:43:57.425Z
 description: Learn how to speed up your jest tests in GH Actions.
 tags:
   - Jest
-  - GitHub
-  - GitHub Action
+  - GitHub Actions
   - Optimization
 ---
 Recently at work, was working on optimizing the jest unit test case CI execution time for our front-end application. We are using [GitHub Action](https://github.com/features/actions) that runs on every PR raised against _master_ branch. 

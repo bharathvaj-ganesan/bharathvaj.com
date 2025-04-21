@@ -10,7 +10,6 @@ tags:
   - vue
   - vue-cli
   - ssl
-  - https
 ---
 
 Usually in local development environment the vue app is served via `http` protocol. But in production environment it is served via `https`. Running the local server in `https` might be needed if you consume API that is forced to be consumed only by the app served via HTTPS.

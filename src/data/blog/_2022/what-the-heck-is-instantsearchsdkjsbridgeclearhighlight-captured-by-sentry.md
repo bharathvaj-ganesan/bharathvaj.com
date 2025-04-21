@@ -9,8 +9,7 @@ description: Learn in detail about this instantSearchSDKJSBridgeClearHighlight
 tags:
   - bug
   - sentry
-  - edge
-  - bing
+  - Browser
 ---
 Recently at work, encountered this interesting error on Sentry logs and there were multiple events for this one so as usual started debugging.
 
