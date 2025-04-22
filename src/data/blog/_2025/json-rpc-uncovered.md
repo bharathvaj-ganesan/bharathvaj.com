@@ -9,7 +9,7 @@ tags:
   - rpc
 ---
 
-While tinkering with [Agentic MCP servers](https://modelcontextprotocol.io/introduction) at work, I ran into JSON-RPC, the slick tech driving parts of the MCP system. Talk about a *remote*ly cool find! It fired up my curiosity, so I dug in. Here’s a quick, casual scoop on JSON-RPC, including notifications, using the `jsonrpc-lite` npm package in a Node.js server and client—puns included!
+While tinkering with [Agentic MCP servers](https://modelcontextprotocol.io/introduction) at work, I ran into JSON-RPC, the slick tech driving parts of the MCP system. Talk about a *remote*ly cool find! It fired up my curiosity, so I dug in.
 
 ## What’s JSON-RPC?
 
