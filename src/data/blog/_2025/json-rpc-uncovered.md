@@ -2,7 +2,7 @@
 title: JSON-RPC Uncovered
 slug: json-rpc-uncovered
 draft: false
-pubDatetime: 2025-04-20T50:00:00.000Z
+pubDatetime: 2025-04-20T01:00:00.000Z
 description: A fun, concise dive into JSON-RPC, its role in remote calls, and a Node.js demo with notifications.
 tags:
   - json-rpc
