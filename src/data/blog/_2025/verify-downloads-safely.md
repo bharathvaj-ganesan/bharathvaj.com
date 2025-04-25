@@ -46,11 +46,10 @@ When offering your app or file, publish **both**:
 - the checksum file (e.g., `yourapp.dmg.sha256`)
 
 Example:
-
----
+```
 **Download yourapp:** [Download v1.0](https://example.com/download/yourapp.dmg)  
 **Checksum file:** [Download .sha256](https://example.com/download/yourapp.dmg.sha256)
----
+```
 
 ## Step 3: Help users verify the download
 
