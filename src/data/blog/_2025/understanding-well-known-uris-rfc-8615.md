@@ -1,5 +1,5 @@
 ---
-title: Understanding .well-known URIs and RFC 8615
+title: Understanding .well-known URIs
 slug: understanding-well-known-uris-rfc-8615
 draft: false
 pubDatetime: 2025-04-21T04:00:00.000Z
@@ -53,68 +53,15 @@ Before `.well-known`, developers and companies had to invent random paths to pla
 
 In short, `.well-known` **brings predictability and interoperability** across the web.
 
+## Real-World Use Cases
 
-## Some Real-World Use Cases
+| Use Case | Purpose | `.well-known` Path |
+|:---|:---|:---|
+| **Let's Encrypt - ACME Challenge** | Verifies domain ownership for issuing SSL certificates. | `/acme-challenge/<token>` |
+| **OAuth 2.0 Authorization Servers** | Enables OpenID Connect clients to discover authorization endpoints. | `/openid-configuration` |
+| **Security.txt** | Provides security researchers with contact information and vulnerability reporting guidelines. | `/security.txt` |
+| **Password Change / Account Management** | Allows browsers to redirect users to password update pages. | `/change-password` |
+| **Apple App Site Association (AASA)** | Enables iOS apps to handle Universal Links by associating apps with domains. | `/apple-app-site-association` |
 
-### 1. **Let's Encrypt - ACME Challenge**
-When you get a free SSL certificate via Let's Encrypt, it needs to verify that you control your domain.  
-It does this by checking a file at:
-
-```
-https://yourdomain.com/.well-known/acme-challenge/<token>
-```
-
-This shows the certificate authority you own the domain.
-
-
-
-### 2. **OAuth 2.0 Authorization Servers**
-When apps need to authenticate via OAuth 2.0, they use **OpenID Connect Discovery** to automatically find the right authorization endpoints.
-
-They do this by fetching:
-
-```
-https://yourdomain.com/.well-known/openid-configuration
-```
-
-This file (a JSON document) describes where the token endpoint, authorization endpoint, and other critical details are located.
-
-
-
-### 3. **Security.txt**
-Websites often provide a way for security researchers to report vulnerabilities.  
-The community standard is to publish a `security.txt` file at:
-
-```
-https://yourdomain.com/.well-known/security.txt
-```
-
-It contains contact details, disclosure policy, and other security-relevant information.
-
-
-
-### 4. **Password Change / Account Management (Well-Known URLs)**
-Browsers like Chrome use `.well-known/change-password` to automatically redirect users to password management pages.
-
-For example:
-
-```
-https://yourdomain.com/.well-known/change-password
-```
-
-Instead of users manually navigating, browsers can help them directly update their passwords on your site.
-
-
-
-### 5. **Apple App Site Association (AASA) for Universal Links**
-If you want iOS apps to open your website links natively inside the app, you need to host an AASA file at:
-
-```
-https://yourdomain.com/.well-known/apple-app-site-association
-```
-
-Apple devices fetch this file to trust and associate your app with your domain.
-
----
 
 So the next time you see a `.well-known` URL, you’ll know: it’s not just a random folder — it’s a tiny piece of internet architecture helping everything run smoothly.
