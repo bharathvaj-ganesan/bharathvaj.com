@@ -2,7 +2,7 @@
 title: Understanding .well-known URIs and RFC 8615
 slug: understanding-well-known-uris-rfc-8615
 draft: false
-pubDatetime: 2025-04-27T04:00:00.000Z
+pubDatetime: 2025-04-21T04:00:00.000Z
 description: Learn what .well-known URIs are, why they were introduced through RFC 8615, and explore real-world use cases like Let's Encrypt, OAuth discovery, and more.
 tags:
   - web standards
