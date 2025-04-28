@@ -1,5 +1,5 @@
 ---
-title: How to Secure Your Domain with HTTPS When Using an AWS ALB
+title: How to get a free AWS SSL certificate for your service.
 slug: add-ssl-domain-aws-alb
 draft: false
 pubDatetime: 2025-04-23T14:17:00.000Z
@@ -10,7 +10,16 @@ tags:
   - ssl
 ---
 
-**Goal:** Enable HTTPS for your domain (e.g., `https://yourdomain.com`) backed by an AWS Application Load Balancer (ALB).
+You've set up your web service on AWS, placed it behind an Application Load Balancer (ALB), and successfully pointed your domain to the ALB using your DNS provider. Great! The next crucial step is enabling HTTPS to secure the traffic between your users and your service.
+
+Fortunately, AWS provides free public SSL/TLS certificates through AWS Certificate Manager (ACM) that integrate seamlessly with ALBs. This guide shows you exactly how to request one and configure your existing ALB to use it.
+
+**Scenario:**
+
+* You have a web server (e.g., on EC2/ECS) running your application.
+* An AWS Application Load Balancer (ALB) routes traffic to your web server.
+* Your custom domain (e.g., `myapp.yourdomain.com`) already has a DNS record (like CNAME or ALIAS) pointing to the ALB's DNS name.
+* You want to enable `https://myapp.yourdomain.com`.
 
 ---
 
