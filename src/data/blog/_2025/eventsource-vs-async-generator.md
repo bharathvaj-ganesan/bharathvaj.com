@@ -78,4 +78,3 @@ async function* streamSSE(response) {
 |----------|---------------|
 | Authenticated LLM streaming | `fetch` + async generator |
 | Lightweight real-time updates | `EventSource` |
-| Full stream parsing control | `fetch` |
