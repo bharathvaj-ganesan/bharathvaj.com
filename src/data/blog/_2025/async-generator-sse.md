@@ -7,6 +7,7 @@ description: Explore how async generators handle Server-Sent Events (SSE) and po
 tags:
   - javascript
   - sse
+  - generators
 ---
 
 Async generators in JavaScript provide an elegant way to handle **Server-Sent Events (SSE)**—especially when dealing with token-by-token or chunked data streams from LLMs.
