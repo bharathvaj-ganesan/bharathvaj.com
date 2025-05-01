@@ -1,5 +1,4 @@
 ---
-
 title: How to Evaluate a System Design?
 slug: how-to-evaluate-system-design
 draft: false

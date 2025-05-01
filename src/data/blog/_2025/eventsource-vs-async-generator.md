@@ -6,7 +6,7 @@ pubDatetime: 2025-04-24T03:00:00.000Z
 description: Compare EventSource and fetch-based async generators for handling SSE and LLM streaming responses. Learn when to use each approach.
 tags:
   - sse
-  - javascript
+  - Javascript
 ---
 
 When it comes to consuming streaming responses in the browser, especially from Server-Sent Events (SSE), two main approaches emerge:

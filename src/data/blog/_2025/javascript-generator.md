@@ -5,7 +5,7 @@ draft: false
 pubDatetime: 2025-04-27T10:00:00.000Z
 description: Generator functions in JavaScript pause and resume execution while maintaining internal state. This post explores how they work and what happens when you add the async keyword in simple terms.
 tags:
-  - javascript
+  - Javascript
   - generators
   - sse
 ---

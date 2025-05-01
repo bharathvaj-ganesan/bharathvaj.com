@@ -6,7 +6,7 @@ pubDatetime: 2025-04-12T04:00:00.000Z
 description: Why I'm stepping away from Next.js — and what you need to know about the middleware vulnerability.
 tags:
   - nextjs
-  - javascript
+  - Javascript
   - react
   - developer-experience
 ---

@@ -6,7 +6,7 @@ slug: how-do-i-develop-my-terminal-portfolio-website-with-react
 featured: false
 draft: false
 tags:
-  - javascript
+  - Javascript
   - reactJS
   - ContextAPI
   - Styled-Components

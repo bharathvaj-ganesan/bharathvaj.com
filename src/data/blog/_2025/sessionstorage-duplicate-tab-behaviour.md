@@ -6,7 +6,7 @@ pubDatetime: 2025-04-14T02:00:00.000Z
 description: Understand how sessionStorage behaves when duplicating browser tabs, with practical examples and tips for web developers.
 tags:
   - Browser APIs
-  - javascript
+  - Javascript
 ---
 
 If you’re a developer debugging browser behavior or just curious about how browsers manage memory and storage, you’ve probably asked yourself:
@@ -31,7 +31,7 @@ Sounds pretty sandboxed, right? But there’s a twist when you **duplicate** a t
 When you duplicate a tab (right-click → Duplicate or Ctrl/Cmd + L → Enter), browsers don’t treat this like a fresh session. They actually **clone the current tab**, including:
 
 - The DOM state
-- JavaScript memory
+- Javascript memory
 - sessionStorage
 
 Yes, you read that right — sessionStorage is **copied** into the new tab.

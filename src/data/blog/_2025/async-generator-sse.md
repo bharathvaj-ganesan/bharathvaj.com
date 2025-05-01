@@ -5,7 +5,7 @@ draft: false
 pubDatetime: 2025-04-25T02:05:00.000Z
 description: Explore how async generators handle Server-Sent Events (SSE) and power real-time streaming in JavaScript, especially for LLMs.
 tags:
-  - javascript
+  - Javascript
   - sse
   - generators
 ---

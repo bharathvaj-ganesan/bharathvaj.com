@@ -6,7 +6,7 @@ pubDatetime: 2022-12-26T03:43:57.425Z
 description: Let us learn how to remove old service worker
 tags:
   - Browser
-  - javascript
+  - Javascript
 ---
 
 Recently, I revamped my blogging site from [Gatsby](https://www.gatsbyjs.com/) to [NextJS](https://nextjs.org/). 

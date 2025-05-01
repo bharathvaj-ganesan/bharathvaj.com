@@ -5,7 +5,7 @@ draft: false
 pubDatetime: 2025-04-10T00:00:00.000Z
 description: Understand why JavaScript's Fetch API uses two await calls and what happens if you skip parsing the response body.
 tags:
-  - javascript
+  - Javascript
   - Browser APIs
   - Web Development
 ---
