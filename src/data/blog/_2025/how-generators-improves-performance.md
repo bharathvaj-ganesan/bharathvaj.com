@@ -35,6 +35,7 @@ for (const line of lines) {
   }
 }
 ```
+This loads the **entire file** into memory, which may be fine for small logs — but dangerous for huge files.
 
 ### ✅ Memory-Efficient: Async Generator
 
@@ -60,8 +61,9 @@ async function* readLogLines(filePath) {
   }
 })();
 ```
+While this reads line one after another, making it efficient.
 
-This loads the **entire file** into memory, which may be fine for small logs — but dangerous for huge files.
+
 
 ### In Python,
 
