@@ -67,5 +67,5 @@ A CRON expression is a string with **5 space-separated fields** (sometimes 6 or 
 ### 🔹 Tips & Tools
 
 - **Always test** your expressions using tools like [crontab.guru](https://crontab.guru) or [Cronhub](https://cronhub.io).
-- Redirect output in real jobs: `0 0 * * * /path/to/script.sh >> /var/log/cron.log 2>&1`
-- For cloud platforms (e.g., AWS CloudWatch, Quartz), be aware of 6–7 field variants.
+
+- This format changes based on the system. For example, the Quartz CRON scheduler has a slightly different format to support extra capabilities, such as seconds and nth recursive patterns, like the 3rd Friday of the month. Similarly AWS Cloudwatch has different one. 
