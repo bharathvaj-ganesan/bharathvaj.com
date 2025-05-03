@@ -6,7 +6,6 @@ draft: false
 slug: vue-router-duplication
 tags:
   - 'vue'
-  - 'vue-router'
   - 'javascript'
 description: 'Learn how to fix "NavigationDuplicated" error thrown by Vue Router'
 ---

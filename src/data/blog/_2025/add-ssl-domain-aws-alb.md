@@ -5,9 +5,9 @@ draft: false
 pubDatetime: 2025-04-23T14:17:00.000Z
 description: Secure traffic to your domain or subdomain by enabling SSL/TLS (HTTPS) when it points to an AWS Application Load Balancer (ALB).
 tags:
-  - aws
+  - AWS
   - route53
-  - ssl
+  - SSL
 ---
 
 You've set up your web service on AWS, placed it behind an Application Load Balancer (ALB), and successfully pointed your domain to the ALB using your DNS provider. Great! The next crucial step is enabling HTTPS to secure the traffic between your users and your service.

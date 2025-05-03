@@ -5,9 +5,9 @@ draft: false
 pubDatetime: 2025-04-15T04:00:00.000Z
 description: Learn how to create an IAM role that allows GitHub Actions to authenticate using OIDC as a Web Identity Provider in AWS IAM.
 tags:
-  - aws
+  - AWS
   - GitHub Actions
-  - iam
+  - IAM
 ---
 
 To enable your GitHub Actions workflows to securely interact with AWS services, you can set up OIDC (OpenID Connect) authentication. By configuring GitHub as a Web Identity Provider, you can create an IAM role that GitHub Actions can assume without needing AWS credentials. Here's how you can set this up.
