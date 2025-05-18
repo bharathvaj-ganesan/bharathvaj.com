@@ -1,5 +1,5 @@
 ---
-title: Avoiding the God Object: A Guide to Better Software Design
+title: Avoiding the God Object - A Guide to Better Software Design
 slug: avoiding-the-god-object
 draft: false
 pubDatetime: 2025-05-18T02:00:00.000Z
