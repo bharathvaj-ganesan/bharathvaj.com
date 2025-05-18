@@ -5,10 +5,9 @@ draft: false
 pubDatetime: 2025-05-17T09:00:00.000Z
 description: A quick look at the punycode module deprecation in Node.js — what it does, why it was removed from core, and how to update your code.
 tags:
-  - Node.js
+  - nodejs
   - JavaScript
-  - Web Standards
-  - URL Handling
+  - Browser APIs
 ---
 
 If you’ve seen this warning in your Node.js application recently you're not alone. In this post, we’ll break down what this warning means, why it happens, and how to fix it.
