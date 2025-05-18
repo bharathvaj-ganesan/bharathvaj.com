@@ -8,8 +8,6 @@ description: Learn in detail about this instantSearchSDKJSBridgeClearHighlight
   error to know about why this occurs.
 tags:
   - bug
-  - sentry
-  - Browser
 ---
 Recently at work, encountered this interesting error on Sentry logs and there were multiple events for this one so as usual started debugging.
 
