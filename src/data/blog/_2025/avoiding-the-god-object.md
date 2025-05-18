@@ -8,10 +8,6 @@ tags:
   - System Design
 ---
 
-Absolutely! Here's the updated blog post including a clear refactoring of the God Object example, showing how it should be broken down for better design.
-
----
-
 In software design, a **God Object** (or God Class) is a class that knows too much or does too much. It's a common code smell that tends to emerge as a system evolves without proper boundaries.
 
 ## What Is a God Object?
