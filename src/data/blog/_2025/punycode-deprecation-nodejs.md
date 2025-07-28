@@ -14,8 +14,7 @@ If you’ve seen this warning in your Node.js application recently you're not al
 
 ```bash
 (node:xxxx) [DEP0040] DeprecationWarning: `punycode` module is deprecated. Please use a third-party alternative instead.
-````
-
+```
 
 ## 🧩 What Is `punycode`?
 
