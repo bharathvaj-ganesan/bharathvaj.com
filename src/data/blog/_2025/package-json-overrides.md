@@ -2,7 +2,7 @@
 title: How to patch vulnerable sub-dependencies with overrides in package.json
 slug: package-json-overrides
 draft: false
-pubDatetime: 2025-07-28T10:00:00.000Z
+pubDatetime: 2025-07-27T10:00:00.000Z
 description: See how to quickly patch a vulnerable sub-dependency in your Node.js project using the overrides field in package.json, with a real-world example and advanced usage.
 tags:
   - npm
