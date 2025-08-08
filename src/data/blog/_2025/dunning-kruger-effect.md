@@ -2,7 +2,7 @@
 title: The Dunning-Kruger Effect - Why Beginners Feel Like Experts
 slug: dunning-kruger-effect
 draft: false
-pubDatetime: 2025-08-11T04:00:00.000Z
+pubDatetime: 2025-08-03T04:00:00.000Z
 description: Understanding the cognitive bias where people with limited knowledge overestimate their competence, with real-world examples from tech and life.
 tags:
   - non tech

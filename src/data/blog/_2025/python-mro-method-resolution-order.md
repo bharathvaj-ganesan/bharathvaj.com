@@ -1,8 +1,8 @@
 ---
-title: Understanding Python's __mro__ - Method Resolution Order
+title: Understanding Python __mro__ Method Resolution Order
 slug: python-mro-method-resolution-order
 draft: false
-pubDatetime: 2025-08-11T10:00:00.000Z
+pubDatetime: 2025-08-01T01:00:00.000Z
 description: Python's __mro__ determines the order in which methods are searched in inheritance hierarchies. Learn what it is, why it matters, and see practical examples.
 tags:
   - Python
