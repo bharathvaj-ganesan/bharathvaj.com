@@ -6,7 +6,7 @@ pubDatetime: 2025-04-28T04:00:00.000Z
 description: A quick guide to understanding how FastAPI and Uvicorn work together to build and serve modern async web applications.
 tags:
   - fastapi
-  - python
+  - Python
 ---
 
 If you're coming from a JavaScript ecosystem (like I did) and are trying to develop apps in Python, you’ll likely find yourself comparing the components to better understand how they map across. Well, I’ve done that comparison for you — thank me later!

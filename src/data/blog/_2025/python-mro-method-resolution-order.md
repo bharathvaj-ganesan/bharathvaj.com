@@ -7,7 +7,6 @@ description: Python's __mro__ determines the order in which methods are searched
 tags:
   - Python
   - OOP
-  - inheritance
 ---
 
 Python's `__mro__` (Method Resolution Order) is a crucial concept that determines how Python looks up methods in inheritance hierarchies. Let's dive into what it is, why we need it, and see it in action.
