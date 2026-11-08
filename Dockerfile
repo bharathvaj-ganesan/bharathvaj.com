@@ -2,8 +2,8 @@
 FROM node:26.13.0 AS base
 WORKDIR /app
 
-# Install pnpm
-RUN corepack enable && corepack prepare pnpm@8.7.1 --activate
+# Install the pnpm version used by Cloudflare Pages
+RUN npm install --global pnpm@8.7.1
 
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
