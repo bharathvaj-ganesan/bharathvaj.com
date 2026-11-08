@@ -10,10 +10,18 @@ export interface Props {
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const seenSlugs = new Set<string>();
   const postResult = posts.map(post => ({
     params: { slug: getPath(post.id, post.filePath, false) },
     props: { post },
   }));
+
+  for (const { params } of postResult) {
+    if (seenSlugs.has(params.slug)) {
+      throw new Error(`Duplicate blog slug: ${params.slug}`);
+    }
+    seenSlugs.add(params.slug);
+  }
 
   return postResult;
 }

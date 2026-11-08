@@ -29,16 +29,19 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 const params = Astro.params;
 const { tag } = params;
 const { page, tagName } = Astro.props;
+const pageLabel = page.currentPage > 1 ? ` - Page ${page.currentPage}` : "";
 ---
 
-<Layout title={`Tag: ${tagName} | ${SITE.title}`}>
+<Layout
+  title={`${tagName} Articles${pageLabel} | ${SITE.title}`}
+  description={`Read Bharathvaj Ganesan's articles about ${tagName}${pageLabel.toLowerCase()}.`}
+>
   <Header />
   <Main
     pageTitle={[`Tag:`, `${tagName}`]}
     titleTransition={tag}
     pageDesc={`All the articles with the tag "${tagName}".`}
   >
-    <h1 slot="title" transition:name={tag}>{`Tag:${tag}`}</h1>
     <ul>
       {page.data.map(data => <Card {...data} />)}
     </ul>

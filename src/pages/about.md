@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/AboutLayout.astro
 title: "👋 About Me"
+description: "Learn about Bharathvaj Ganesan's software engineering background, technical leadership, and work in applied AI."
 ---
  
 Ever since I wrote my first "Hello World," I've been hooked on understanding how software really works. That curiosity led me to a degree in Computer Science Engineering, and over the past 7+ years, it’s evolved into a passion for building purposeful, technically robust products.

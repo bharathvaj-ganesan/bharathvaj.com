@@ -15,6 +15,7 @@ export interface Props {
   pubDatetime?: Date;
   modDatetime?: Date | null;
   scrollSmooth?: boolean;
+  noindex?: boolean;
 }
 
 const {
@@ -27,16 +28,17 @@ const {
   pubDatetime,
   modDatetime,
   scrollSmooth = false,
+  noindex = false,
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.url);
 
-const structuredData = {
+const structuredData = pubDatetime && {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  headline: `${title}`,
+  headline: title.replace(` | ${SITE.title}`, ""),
   image: `${socialImageURL}`,
-  datePublished: `${pubDatetime?.toISOString()}`,
+  datePublished: pubDatetime.toISOString(),
   ...(modDatetime && { dateModified: modDatetime.toISOString() }),
   author: [
     {
@@ -61,6 +63,7 @@ const structuredData = {
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <meta name="author" content={author} />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
@@ -96,11 +99,15 @@ const structuredData = {
     <meta property="twitter:image" content={socialImageURL} />
 
     <!-- Google JSON-LD Structured data -->
-    <script
-      type="application/ld+json"
-      is:inline
-      set:html={JSON.stringify(structuredData)}
-    />
+    {
+      structuredData && (
+        <script
+          type="application/ld+json"
+          is:inline
+          set:html={JSON.stringify(structuredData)}
+        />
+      )
+    }
 
     <!-- Enable RSS feed auto-discovery  -->
     <!-- https://docs.astro.build/en/recipes/rss/#enabling-rss-feed-auto-discovery -->

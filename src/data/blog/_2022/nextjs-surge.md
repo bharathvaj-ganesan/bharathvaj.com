@@ -1,6 +1,6 @@
 ---
 title: Deploy NextJS to Surge.sh
-slug: remove-service-worker
+slug: nextjs-surge
 draft: false
 pubDatetime: 2022-12-23T03:43:57.425Z
 description: Learn how to deploy NextJS to surge.sh

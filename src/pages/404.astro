@@ -6,7 +6,11 @@ import LinkButton from "@/components/LinkButton.astro";
 import { SITE } from "@/config";
 ---
 
-<Layout title={`404 Not Found | ${SITE.title}`}>
+<Layout
+  title={`404 Not Found | ${SITE.title}`}
+  description="The page you requested could not be found. Browse Bharathvaj Ganesan's software engineering articles instead."
+  noindex
+>
   <Header />
 
   <main

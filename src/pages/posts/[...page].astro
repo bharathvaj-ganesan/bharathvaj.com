@@ -16,9 +16,13 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
+const pageLabel = page.currentPage > 1 ? ` - Page ${page.currentPage}` : "";
 ---
 
-<Layout title={`Posts | ${SITE.title}`}>
+<Layout
+  title={`Software Engineering Posts${pageLabel} | ${SITE.title}`}
+  description={`Browse Bharathvaj Ganesan's articles on software engineering, web development, and applied AI${pageLabel.toLowerCase()}.`}
+>
   <Header />
   <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
     <ul>
