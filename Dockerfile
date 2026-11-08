@@ -1,9 +1,9 @@
 # Base stage for building the static files
-FROM node:lts AS base
+FROM node:26.13.0 AS base
 WORKDIR /app
 
 # Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN corepack enable && corepack prepare pnpm@8.7.1 --activate
 
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
