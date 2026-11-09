@@ -14,6 +14,7 @@ const blog = defineCollection({
       title: z.string(),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
+      type: z.enum(["tutorial", "review", "til", "other"]).default("other"),
       tags: z.array(z.string()).default(["others"]),
       ogImage: image().or(z.string()).optional(),
       description: z.string(),

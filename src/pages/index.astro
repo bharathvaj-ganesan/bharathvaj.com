@@ -17,6 +17,7 @@ const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
+const tilPosts = sortedPosts.filter(({ data }) => data.type === "til");
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 ---
 
