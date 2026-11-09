@@ -1,0 +1,49 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Main from "@/layouts/Main.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Card from "@/components/Card.astro";
+import Pagination from "@/components/Pagination.astro";
+import getSortedPosts from "@/utils/getSortedPosts";
+import { SITE } from "@/config";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = getSortedPosts(
+    await getCollection("blog", ({ data }) => data.type === "til")
+  );
+  return paginate(posts, { pageSize: SITE.postPerPage });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const pageLabel = page.currentPage > 1 ? ` - Page ${page.currentPage}` : "";
+---
+
+<Layout
+  title={`Today I Learned${pageLabel} | ${SITE.title}`}
+  description="Short notes, useful discoveries, and lessons from building software and working with AI."
+>
+  <Header />
+  <Main
+    pageTitle="Today I Learned"
+    pageDesc="Short notes, useful discoveries, and things I learn while building."
+  >
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <p>{page.total} {page.total === 1 ? "note" : "notes"}</p>
+      <a
+        href="/til/rss.xml"
+        class="text-accent underline decoration-dashed underline-offset-4"
+      >
+        Subscribe via RSS
+      </a>
+    </div>
+    <ul>
+      {page.data.map(data => <Card {...data} />)}
+    </ul>
+    {page.total === 0 && <p class="my-8">The first note is on its way.</p>}
+  </Main>
+  <Pagination {page} />
+  <Footer noMarginTop={page.lastPage > 1} />
+</Layout>

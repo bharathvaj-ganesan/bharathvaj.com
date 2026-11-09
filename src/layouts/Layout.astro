@@ -119,6 +119,12 @@ const structuredData = pubDatetime && {
     />
 
     <meta name="theme-color" content="" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`Today I Learned | ${SITE.title}`}
+      href={new URL("til/rss.xml", Astro.site)}
+    />
 
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,

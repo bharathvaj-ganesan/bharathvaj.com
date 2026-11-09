@@ -16,9 +16,13 @@ import { SOCIALS } from "@/constants";
 const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
+const featuredPosts = sortedPosts.filter(
+  ({ data }) => data.featured && data.type !== "til"
+);
 const tilPosts = sortedPosts.filter(({ data }) => data.type === "til");
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+const recentPosts = sortedPosts.filter(
+  ({ data }) => !data.featured && data.type !== "til"
+);
 ---
 
 <Layout>
@@ -28,47 +32,80 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       <h1 class="my-4 inline-block text-3xl font-bold sm:my-8 sm:text-4xl">
         Hey 👋, I’m Bharath.
       </h1>
-      <a
-        target="_blank"
-        href="/rss.xml"
-        class="inline-block"
-        aria-label="rss feed"
-        title="RSS Feed"
-      >
-        <IconRss
-          width={20}
-          height={20}
-          class="scale-125 stroke-accent stroke-3"
-        />
-        <span class="sr-only">RSS Feed</span>
-      </a>
 
       <p>
-        I'm a Software Engineer with 7+ years of experience, passionate about building purposeful products with deep technical rigor. With a background in Computer Science Engineering, my curiosity for how systems work has shaped my journey.
+        I'm a Software Engineer with 7+ years of experience, passionate about
+        building purposeful products with deep technical rigor. With a
+        background in Computer Science Engineering, my curiosity for how systems
+        work has shaped my journey.
 
-        <div class="mt-6">Currently serving as a <b>Senior Lead Software Engineer at <a href="https://chargebee.com" target="_blank">Chargebee</a></b>, where I lead Applied AI initiatives — building intelligent Copilots, scalable AI workflows, and a robust AI platform.</div>
+        <div class="mt-6">
+          Currently serving as a <b
+            >Senior Lead Software Engineer at <a
+              href="https://chargebee.com"
+              target="_blank">Chargebee</a
+            ></b
+          >, where I lead Applied AI initiatives — building intelligent
+          Copilots, scalable AI workflows, and a robust AI platform.
+        </div>
       </p>
       <p class="mt-2">
-        Read the blog posts or check 
+        Read the blog posts or check
         <LinkButton
           class="underline decoration-dashed underline-offset-4 hover:text-accent"
           href="/about"
         >
-        my bio
+          my bio
         </LinkButton> for more info.
       </p>
-      {
-        // only display if at least one social link is enabled
-        SOCIALS.length > 0 && (
-          <div class="mt-4 flex flex-col sm:flex-row sm:items-center">
-            <div class="mr-2 mb-1 whitespace-nowrap sm:mb-0">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
+      <div class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3">
+        {
+          SOCIALS.length > 0 && (
+            <div class="flex flex-wrap items-center gap-x-2">
+              <span class="whitespace-nowrap">Social Links:</span>
+              <Socials />
+            </div>
+          )
+        }
+        <a
+          href="/til/rss.xml"
+          class="inline-flex items-center gap-2 whitespace-nowrap text-accent underline decoration-dashed underline-offset-4"
+        >
+          <IconRss width={20} height={20} aria-hidden="true" />
+          Subscribe via RSS
+        </a>
+      </div>
     </section>
 
     <Hr />
+
+    {
+      tilPosts.length > 0 && (
+        <>
+          <section id="recent-tils" class="pt-12 pb-6">
+            <h2 class="text-2xl font-semibold tracking-wide">
+              Today I Learned
+            </h2>
+            <p class="mt-2">
+              Short notes, useful discoveries, and things I learn while
+              building.
+            </p>
+            <ul>
+              {tilPosts.slice(0, SITE.postPerIndex).map(data => (
+                <Card variant="h3" {...data} />
+              ))}
+            </ul>
+            <div class="my-6">
+              <LinkButton href="/til/">
+                All TILs
+                <IconArrowRight class="inline-block" />
+              </LinkButton>
+            </div>
+          </section>
+          <Hr />
+        </>
+      )
+    }
 
     {
       featuredPosts.length > 0 && (

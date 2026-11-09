@@ -68,8 +68,9 @@ const layoutProps = {
 
 /* ========== Prev/Next Posts ========== */
 
-const allPosts = posts.map(({ data: { title }, id }) => ({
+const allPosts = posts.map(({ data: { title }, id, filePath }) => ({
   slug: id,
+  href: getPath(id, filePath),
   title,
 }));
 
@@ -91,6 +92,16 @@ const nextPost =
     ]}
     data-pagefind-body
   >
+    {
+      post.data.type === "til" && (
+        <a
+          href="/til/"
+          class="mb-4 block text-accent underline decoration-dashed underline-offset-4"
+        >
+          Today I Learned
+        </a>
+      )
+    }
     <h1
       transition:name={slugifyStr(title)}
       class="inline-block text-2xl font-bold text-accent sm:text-3xl"
@@ -133,10 +144,7 @@ const nextPost =
     <div data-pagefind-ignore class="grid grid-cols-1 gap-6 sm:grid-cols-2">
       {
         prevPost && (
-          <a
-            href={`/posts/${prevPost.slug}`}
-            class="flex w-full gap-1 hover:opacity-75"
-          >
+          <a href={prevPost.href} class="flex w-full gap-1 hover:opacity-75">
             <IconChevronLeft class="inline-block flex-none" />
             <div>
               <span>Previous Post</span>
@@ -148,7 +156,7 @@ const nextPost =
       {
         nextPost && (
           <a
-            href={`/posts/${nextPost.slug}`}
+            href={nextPost.href}
             class="flex w-full justify-end gap-1 text-right hover:opacity-75 sm:col-start-2"
           >
             <div>
