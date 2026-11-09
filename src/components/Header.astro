@@ -33,25 +33,25 @@ const isActive = (path: string) => {
   </a>
   <div
     id="nav-container"
-    class="mx-auto flex max-w-4xl flex-col items-center justify-between md:flex-row"
+    class="mx-auto flex max-w-4xl flex-col items-center justify-between lg:flex-row"
   >
     <div
       id="top-nav-wrap"
-      class="relative flex w-full items-baseline justify-between bg-background p-4 md:items-center md:py-6"
+      class="relative flex w-full items-baseline justify-between bg-background p-4 lg:items-center lg:py-6"
     >
       <a
         href="/"
-        class="absolute py-1 text-2xl leading-7 font-semibold whitespace-nowrap md:static"
+        class="absolute py-1 text-2xl leading-7 font-semibold whitespace-nowrap lg:static"
       >
         {SITE.title}
       </a>
       <nav
         id="nav-menu"
-        class="flex w-full flex-col items-center md:ml-2 md:flex-row md:justify-end md:space-x-4 md:py-0"
+        class="flex w-full flex-col items-center lg:ml-2 lg:flex-row lg:justify-end lg:space-x-4 lg:py-0"
       >
         <button
           id="menu-btn"
-          class="focus-outline self-end p-2 md:hidden"
+          class="focus-outline self-end p-2 lg:hidden"
           aria-label="Open Menu"
           aria-expanded="false"
           aria-controls="menu-items"
@@ -63,9 +63,9 @@ const isActive = (path: string) => {
           id="menu-items"
           class:list={[
             "mt-4 grid w-44 grid-cols-2 place-content-center gap-2",
-            "[&>li>a]:block [&>li>a]:px-4 [&>li>a]:py-3 [&>li>a]:text-center [&>li>a]:font-medium [&>li>a]:hover:text-accent md:[&>li>a]:px-2 md:[&>li>a]:py-1",
+            "[&>li>a]:block [&>li>a]:px-4 [&>li>a]:py-3 [&>li>a]:text-center [&>li>a]:font-medium [&>li>a]:hover:text-accent lg:[&>li>a]:px-2 lg:[&>li>a]:py-1",
             "hidden",
-            "md:mt-0 md:ml-0 md:flex md:w-auto md:gap-x-5 md:gap-y-0",
+            "lg:mt-0 lg:ml-0 lg:flex lg:w-auto lg:gap-x-5 lg:gap-y-0",
           ]}
         >
           <li class="col-span-2">
@@ -99,7 +99,7 @@ const isActive = (path: string) => {
                 <LinkButton
                   href="/archives"
                   class:list={[
-                    "focus-outline flex justify-center p-3 md:p-1",
+                    "focus-outline flex justify-center p-3 lg:p-1",
                     {
                       "active-nav [&>svg]:stroke-accent": isActive("/archives"),
                     },
@@ -107,8 +107,8 @@ const isActive = (path: string) => {
                   ariaLabel="archives"
                   title="Archives"
                 >
-                  <IconArchive class="hidden md:inline-block" />
-                  <span class="md:sr-only">Archives</span>
+                  <IconArchive class="hidden lg:inline-block" />
+                  <span class="lg:sr-only">Archives</span>
                 </LinkButton>
               </li>
             )
@@ -117,7 +117,7 @@ const isActive = (path: string) => {
             <LinkButton
               href="/search"
               class:list={[
-                "focus-outline flex p-3 md:p-1",
+                "focus-outline flex p-3 lg:p-1",
                 { "[&>svg]:stroke-accent": isActive("/search") },
               ]}
               ariaLabel="search"
@@ -132,7 +132,7 @@ const isActive = (path: string) => {
               <li class="col-span-1 flex items-center justify-center">
                 <button
                   id="theme-btn"
-                  class="focus-outline relative size-12 p-4 md:size-8 hover:[&>svg]:stroke-accent"
+                  class="focus-outline relative size-12 p-4 lg:size-8 hover:[&>svg]:stroke-accent"
                   title="Toggles light & dark"
                   aria-label="auto"
                   aria-live="polite"
