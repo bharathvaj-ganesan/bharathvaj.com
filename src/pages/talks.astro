@@ -1,0 +1,22 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Main from "@/layouts/Main.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Talks from "@/components/Talks.astro";
+import { SITE } from "@/config";
+---
+
+<Layout
+  title={`Talks | ${SITE.title}`}
+  description="Conference talks by Bharathvaj Ganesan. Watch recordings and explore practical lessons on Vue, reusable components, and building software at scale."
+>
+  <Header />
+  <Main
+    pageTitle="Talks"
+    pageDesc="Ideas and lessons from building software, shared on stage."
+  >
+    <Talks />
+  </Main>
+  <Footer />
+</Layout>

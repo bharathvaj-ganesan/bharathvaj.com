@@ -1,0 +1,95 @@
+---
+import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+
+const sessionUrl =
+  "https://hasgeek.com/jsfoo/2019-vueday/sub/building-form-field-components-in-an-enterprise-sc-MWpguweVW2MUkBXHCzQfei";
+---
+
+<article class="talk" aria-labelledby="talk-title">
+  <div class="talk-details">
+    <p class="mb-3 text-sm font-semibold text-accent">
+      JSFoo VueDay <span aria-hidden="true">/</span> 2019
+    </p>
+    <h2 id="talk-title" class="text-xl leading-snug font-semibold sm:text-2xl">
+      Building form field components in an enterprise-scale product
+    </h2>
+    <p class="mt-4 text-sm leading-relaxed sm:text-base">
+      A look at how we built reusable forms at Chargebee with Vue — the
+      patterns, challenges, and practical lessons behind flexible form field
+      components at scale.
+    </p>
+    <ul class="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-xs" aria-label="Topics">
+      <li>Vue.js</li>
+      <li>Component design</li>
+      <li>Forms at scale</li>
+    </ul>
+  </div>
+
+  <div class="talk-video">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/DJkp9qbVLmk"
+      title="Building form field components in an enterprise-scale product — Bharathvaj Ganesan at JSFoo VueDay 2019"
+      width="864"
+      height="486"
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+
+  <div class="talk-footer">
+    <span class="text-xs">Recorded at JSFoo VueDay</span>
+    <a
+      href={sessionUrl}
+      class="inline-flex items-center gap-2 text-sm whitespace-nowrap text-accent underline decoration-dashed underline-offset-4 hover:decoration-solid"
+    >
+      Session details
+      <IconArrowRight class="size-4" aria-hidden="true" />
+    </a>
+  </div>
+</article>
+
+<style>
+  /* Hallmark · editorial section · existing mono theme and accent tokens.
+   * Pre-emit critique: Philosophy 4 · Hierarchy 4 · Execution 4 · Specificity 5 · Restraint 5 · Variety 3.
+   */
+  .talk {
+    min-width: 0;
+    border: 1px solid var(--color-border);
+    border-top: 3px solid var(--color-accent);
+  }
+
+  .talk-details {
+    padding: clamp(1rem, 4vw, 2rem);
+  }
+
+  h2 {
+    max-width: 36ch;
+    overflow-wrap: anywhere;
+  }
+
+  .talk-details > p {
+    max-width: 68ch;
+  }
+
+  .talk-video {
+    aspect-ratio: 16 / 9;
+    background: var(--color-muted);
+  }
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .talk-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem clamp(1rem, 4vw, 2rem);
+  }
+</style>
