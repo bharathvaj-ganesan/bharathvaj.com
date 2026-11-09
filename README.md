@@ -4,11 +4,11 @@ This is my personal site where you can learn with me everyday.
 
 ## Writing a TIL
 
-Add a Markdown file in `src/data/blog/_2026/` (or the current year), using a unique filename such as `hello-world.md`:
+Add a Markdown file in `src/data/blog/_2026/` (or the current year), using a unique filename such as `model-routing-decisions-api.md`:
 
 ```yaml
 ---
-title: Hello World
+title: "Decision API Use Case: Model Routing"
 pubDatetime: 2026-11-09T00:00:00Z
 type: til
 tags:
@@ -19,7 +19,7 @@ description: A short summary of what I learned.
 
 Write the note below the frontmatter. Set `draft: true` to keep unfinished notes unpublished. Future-dated notes are withheld from listings and feeds until the configured publishing window.
 
-Published TILs appear at `/til/`, in the homepage's Today I Learned section, and in the dedicated `/til/rss.xml` feed. They also use the existing post pages, tags, archives, site-wide RSS, and search. The first note lives at `/posts/hello-world/`.
+Published TILs appear at `/til/`, in the homepage's Today I Learned section, and in the dedicated `/til/rss.xml` feed. They also use the dedicated TIL article pages, tags, archives, site-wide RSS, and search. The first note lives at `/til/model-routing-decisions-api/`.
 
 Run `pnpm dev` to preview and `pnpm build` to validate the site and rebuild the search index.
 

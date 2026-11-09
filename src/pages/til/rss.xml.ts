@@ -15,7 +15,7 @@ export async function GET() {
       "Short notes, useful discoveries, and things I learn while building.",
     site: SITE.website,
     items: posts.map(({ data, id, filePath }) => ({
-      link: getPath(id, filePath),
+      link: getPath(id, filePath, true, data.type),
       title: data.title,
       description: data.description,
       pubDate: new Date(data.modDatetime ?? data.pubDatetime),

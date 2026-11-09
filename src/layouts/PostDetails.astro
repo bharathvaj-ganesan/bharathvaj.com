@@ -47,7 +47,7 @@ if (typeof initOgImage === "string") {
 
 // Use dynamic OG image if enabled and no remote|local ogImage
 if (!ogImageUrl && SITE.dynamicOgImage) {
-  ogImageUrl = `${getPath(post.id, post.filePath)}/index.png`;
+  ogImageUrl = `${getPath(post.id, post.filePath, true, post.data.type)}/index.png`;
 }
 
 // Resolve OG image URL (or fallback to default `og.png`)
@@ -68,9 +68,9 @@ const layoutProps = {
 
 /* ========== Prev/Next Posts ========== */
 
-const allPosts = posts.map(({ data: { title }, id, filePath }) => ({
+const allPosts = posts.map(({ data: { title, type }, id, filePath }) => ({
   slug: id,
-  href: getPath(id, filePath),
+  href: getPath(id, filePath, true, type),
   title,
 }));
 
