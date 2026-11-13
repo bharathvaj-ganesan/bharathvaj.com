@@ -9,7 +9,7 @@ tags:
 description: A brief comparison of Gemini Decision 1, TypeSafe Jev, and OpenAI’s Decisions API.
 ---
 
-Google has introduced the **Gemini Decisions API**, powered by **Gemini Decision 1**.
+[Google has introduced](https://x.com/Google/status/2120583966272983331) the **Gemini Decisions API**, powered by **Gemini Decision 1**.
 
 Instead of generating text token by token, it evaluates shared input and returns typed decisions with probabilities and confidence scores in one pass.
 
