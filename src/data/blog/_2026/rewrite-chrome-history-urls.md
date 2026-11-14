@@ -1,5 +1,5 @@
 ---
-title: "The Old GitHub Org Won't Let Go"
+title: "Use Claude to rewrite Chrome history"
 pubDatetime: 2026-11-14T00:00:00Z
 type: til
 tags:
