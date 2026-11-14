@@ -44,7 +44,7 @@ A few things I'd check before doing this yourself:
 
 ## TIL
 
-Chrome stores history in an embeddable database, SQLite. Quit the browser, back up its History file, and rewrite URL prefixes inside a transaction. Check the counts before you reopen Chrome.
+Chrome stores history in an embeddable database, SQLite.
 
 ## References
 
