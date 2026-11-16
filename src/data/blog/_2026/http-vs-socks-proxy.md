@@ -136,7 +136,7 @@ const res = await fetch("https://example.com", { dispatcher });
 console.log(res.status);
 ```
 
-Most tools also respect environment variables, so you often don't need code at all:
+Tools like curl also respect environment variables, so you often don't need code at all. Node ignores them unless you set `NODE_USE_ENV_PROXY=1` (or pass `--use-env-proxy`):
 
 ```bash
 export HTTP_PROXY=http://localhost:8080
@@ -144,6 +144,7 @@ export HTTPS_PROXY=http://localhost:8080
 export NO_PROXY=localhost,127.0.0.1
 
 curl https://example.com
+NODE_USE_ENV_PROXY=1 node app.js
 ```
 
 ## Using them with curl
