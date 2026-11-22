@@ -32,14 +32,9 @@ const pageLabel = page.currentPage > 1 ? ` - Page ${page.currentPage}` : "";
   >
     <div class="flex flex-wrap items-center justify-between gap-4">
       <p>{page.total} {page.total === 1 ? "note" : "notes"}</p>
-      <a
-        href="/til/rss.xml"
-        class="text-accent underline decoration-dashed underline-offset-4"
-      >
-        Subscribe via RSS
-      </a>
+      <a href="/til/rss.xml" class="link"> Subscribe via RSS </a>
     </div>
-    <ul>
+    <ul class="index-list">
       {page.data.map(data => <Card {...data} />)}
     </ul>
     {page.total === 0 && <p class="my-8">The first note is on its way.</p>}

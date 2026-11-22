@@ -1,6 +1,6 @@
 ---
-import Hr from "./Hr.astro";
 import Socials from "./Socials.astro";
+import { SITE } from "@/config";
 
 const currentYear = new Date().getFullYear();
 
@@ -9,18 +9,51 @@ export interface Props {
 }
 
 const { noMarginTop = false } = Astro.props;
+
+const links = [
+  { href: "/posts/", text: "Posts" },
+  { href: "/til/", text: "TIL" },
+  { href: "/talks/", text: "Talks" },
+  { href: "/tags/", text: "Tags" },
+  ...(SITE.showArchives ? [{ href: "/archives/", text: "Archives" }] : []),
+  { href: "/search/", text: "Search" },
+  { href: "/about/", text: "About" },
+  { href: "/rss.xml", text: "Posts feed" },
+  { href: "/til/rss.xml", text: "TIL feed" },
+];
 ---
 
-<footer class:list={["w-full", { "mt-auto": !noMarginTop }]}>
-  <Hr noPadding />
-  <div
-    class="flex flex-col items-center justify-between py-6 sm:flex-row-reverse sm:py-4"
-  >
-    <Socials centered />
-    <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row">
-      <span>Copyright &#169; {currentYear}</span>
-      <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
-      <span>All rights reserved.</span>
+<footer
+  class:list={["w-full border-t border-border", { "mt-auto": !noMarginTop }]}
+>
+  <div class="frame flex flex-col gap-6 py-8">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+        <a
+          href="/"
+          class="font-display text-base font-semibold tracking-display whitespace-nowrap"
+        >
+          {SITE.title}
+        </a>
+        <p class="byline">Copyright &#169; {currentYear} {SITE.author}</p>
+      </div>
+      <Socials />
     </div>
+    <nav aria-label="Footer">
+      <ul class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-2">
+        {
+          links.map(link => (
+            <li>
+              <a
+                href={link.href}
+                class="hover:text-ink hover:underline hover:underline-offset-4"
+              >
+                {link.text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
   </div>
 </footer>

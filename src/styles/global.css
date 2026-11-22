@@ -1,59 +1,206 @@
+/* Hallmark · shape: Inbox (the writing set as lists inside bordered surfaces) · genre: modern-minimal · theme: custom · redesign: full · job: subscribe · idea: "a blog set like a quiet product, where the writing is the thing on show, in lists you scan like an inbox" · vibe: "white, hairline, tight Inter, quiet"
+ * paper: oklch(99.4% 0.002 260) · accent: oklch(52% 0.15 48), a warm orange taken from the reference site and held to links and focus · display: Inter · body: Inter (by request: the reference site tiny-agents.nesin.io sets in it) · mono: JetBrains Mono for dates and code · hero: centred headline, one grey line, two pill actions · nav: sticky hairline bar, wordmark then links, search and theme at the right · footer: one compact row · imagery: none · signature: the latest posts and notes as two bordered list surfaces, every row a whole link
+ * axes: light/grotesk-sans/warm · posture: restrained · contrast: pass · fold: pass · copy: verbatim (the bio is the owner's own words; the hero line is new, built from them) · v2.0.0 */
+/* Hallmark · pre-emit critique: P3 H4 E4 S3 R4 V4 · weakest: S, a modern-minimal skin is shared by a lot of product sites; leaned on the inbox-style list surfaces, each row a whole link with its date in mono, as the one move that belongs to a blog */
+/* Hallmark · waive 1 · display font Inter in tokens.css and the heading rules · the user asked for the look of the reference site, which sets its headings in Inter */
+/* Hallmark · waive 78 · section heads 16px under a 72px hero head · the home headings are the small title row of a list surface, like an inbox header, not section heads */
+/* Hallmark · waive 44c · hero ends 495px · the two list surfaces start inside the first screen, so the page opens on the writing and not on a bigger visual */
+/* Hallmark · waive 59 · gap 64px between sections · the home list surfaces sit in one row of two with a 24px gutter and the bio follows after a hairline */
+/* Hallmark · waive 77 · thin sections on the post and list pages · a post is a title, a byline and one reading column, and a list page is one list surface */
+/* Hallmark · waive 79 · gap under a list page head · the list surface starts under the page title and the empty space is the rest of the short list */
+/* Hallmark · waive 39b · button.copy-code 24px · the copy button sits on a code block in a post and is a small utility, not a marketing control */
+/* Hallmark · dismissed 41 · html[data-theme="dark"] pre:has(code) · the text colour is set by the shiki-dark rule just above, one rule for the spans and the block */
+/* Hallmark · dropped recent-posts, recent-tils · the user asked to merge the two lists into one titled TIL */
+/* Hallmark · dropped back-button · the user asked to remove the Go back link from post pages */
 @import "tailwindcss";
+@import "./tokens.css";
+@import "./base.css" layer(base);
 @import "./typography.css";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-:root,
-html[data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
-  --muted: #e6e6e6;
-  --border: #ece9e9;
-}
-
-html[data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --muted: #343f60bf;
-  --border: #ab4b08;
-}
-
+/* The old AstroPaper names keep working, pointed at the tokens. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-muted: var(--muted);
-  --color-border: var(--border);
+  --color-background: var(--color-paper);
+  --color-foreground: var(--color-ink);
+  --color-border: var(--color-rule);
+}
+
+:root {
+  --display-weight: 600;
+  --color-well: oklch(95.8% 0.004 270);
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+  --accent: var(--color-accent);
+  --border: var(--color-rule);
+}
+
+/* The same system turned over: graphite ground, bone ink, the orange lifted. */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper: oklch(17% 0.008 280);
+  --color-paper-2: oklch(21% 0.009 280);
+  --color-paper-3: oklch(25% 0.01 280);
+  --color-ink: oklch(95% 0.005 280);
+  --color-ink-2: oklch(82% 0.008 280);
+  --color-muted: oklch(68% 0.01 280);
+  --color-rule: oklch(30% 0.01 280);
+  --color-rule-2: oklch(38% 0.012 280);
+  --color-accent: oklch(78% 0.13 55);
+  --color-accent-ink: oklch(18% 0.02 55);
+  --color-focus: oklch(80% 0.14 55);
+  --color-well: oklch(21% 0.009 280);
+  --shadow-card: none;
 }
 
 @layer base {
-  * {
-    @apply border-border outline-accent/75;
-    scrollbar-width: auto;
-    scrollbar-color: var(--color-muted) transparent;
-  }
   html {
     @apply overflow-y-scroll scroll-smooth;
   }
   body {
-    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/75 selection:text-background;
+    @apply flex min-h-svh flex-col;
+    font-feature-settings: "cv11", "ss03";
   }
   a,
   button {
-    @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
+    transition:
+      color var(--dur-micro) var(--ease-out),
+      background-color var(--dur-micro) var(--ease-out),
+      text-decoration-thickness var(--dur-micro) var(--ease-out),
+      opacity var(--dur-micro) var(--ease-out);
+  }
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+  a:active,
+  button:active {
+    text-decoration-thickness: 3px;
+    opacity: 0.7;
   }
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
-  section,
-  footer {
-    @apply mx-auto max-w-4xl px-4;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: var(--display-weight);
+  }
+  strong,
+  b {
+    font-weight: 600;
+  }
+  code,
+  kbd,
+  pre,
+  samp {
+    font-family: var(--font-outlier);
   }
 }
 
-.active-nav {
-  @apply underline decoration-wavy decoration-2 underline-offset-4;
+@layer components {
+  .frame {
+    @apply mx-auto w-full max-w-5xl px-4 sm:px-6;
+  }
+
+  .rule-hair {
+    margin: 0;
+    border: 0;
+    border-top: var(--rule-hair) solid var(--color-rule);
+  }
+
+  /* A bordered surface, for the few things that are a box (talk, prev/next). */
+  .surface {
+    overflow: hidden;
+    background: var(--color-paper);
+    border: var(--rule-hair) solid var(--color-rule);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* The post and note lists: no box, a hairline above and between rows.
+     Each row is one whole link; its title underlines on hover. */
+  .index-list,
+  .rows {
+    border-top: var(--rule-hair) solid var(--color-rule);
+  }
+  .index-list > li,
+  .rows > li {
+    position: relative;
+    border-bottom: var(--rule-hair) solid var(--color-rule);
+  }
+  .index-list > li:hover h2,
+  .index-list > li:hover h3,
+  .rows > li:hover h2,
+  .rows > li:hover h3 {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+
+  .byline {
+    font: 400 var(--text-sm) / 1.4 var(--font-body);
+    color: var(--color-muted);
+  }
+  /* Dates and counts in a list: the mono face, tabular. */
+  .agate {
+    font: 400 var(--text-xs) / 1.4 var(--font-outlier);
+    font-variant-numeric: tabular-nums;
+    color: var(--color-muted);
+  }
+
+  .link {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+  }
+
+  .pill {
+    display: inline-block;
+    border: var(--rule-hair) solid var(--color-rule-2);
+    border-radius: var(--radius-pill);
+    padding: var(--space-2xs) var(--space-sm);
+    font: 500 var(--text-sm) / 1.4 var(--font-body);
+    color: var(--color-ink-2);
+    text-decoration: none;
+    transition: background-color var(--dur-micro) var(--ease-out);
+  }
+  .pill:hover {
+    background: var(--color-paper-2);
+  }
+
+  .btn {
+    display: inline-block;
+    border: var(--rule-hair) solid transparent;
+    border-radius: var(--radius-pill);
+    padding: var(--space-md) var(--space-lg);
+    font: 500 0.9375rem / 1 var(--font-body);
+    text-decoration: none;
+    transition:
+      background-color var(--dur-micro) var(--ease-out),
+      color var(--dur-micro) var(--ease-out);
+  }
+  .btn-primary {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+  .btn-primary:hover {
+    background: var(--color-ink-2);
+  }
+  .btn-secondary {
+    background: var(--color-paper);
+    border-color: var(--color-rule-2);
+    color: var(--color-ink);
+  }
+  .btn-secondary:hover {
+    background: var(--color-paper-2);
+  }
+
+  .active-nav {
+    @apply rounded-full bg-paper-2 text-ink;
+  }
 }

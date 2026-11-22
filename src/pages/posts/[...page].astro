@@ -28,7 +28,7 @@ const pageLabel = page.currentPage > 1 ? ` - Page ${page.currentPage}` : "";
 >
   <Header />
   <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
-    <ul>
+    <ul class="index-list">
       {page.data.map(data => <Card {...data} />)}
     </ul>
   </Main>

@@ -7,11 +7,8 @@ import Tag from "@/components/Tag.astro";
 import Datetime from "@/components/Datetime.astro";
 import EditPost from "@/components/EditPost.astro";
 import ShareLinks from "@/components/ShareLinks.astro";
-import BackButton from "@/components/BackButton.astro";
 import { getPath } from "@/utils/getPath";
 import { slugifyStr } from "@/utils/slugify";
-import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
-import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
 import { SITE } from "@/config";
 
 export interface Props {
@@ -83,40 +80,30 @@ const nextPost =
 
 <Layout {...layoutProps}>
   <Header />
-  <BackButton />
   <main
     id="main-content"
-    class:list={[
-      "mx-auto w-full max-w-4xl px-4 pb-12",
-      { "mt-8": !SITE.showBackButton },
-    ]}
+    class="frame mt-10 pb-12"
     data-pagefind-body
   >
     {
       post.data.type === "til" && (
-        <a
-          href="/til/"
-          class="mb-4 block text-accent underline decoration-dashed underline-offset-4"
-        >
+        <a href="/til/" class="link mb-4 inline-block">
           Today I Learned
         </a>
       )
     }
-    <h1
-      transition:name={slugifyStr(title)}
-      class="inline-block text-2xl font-bold text-accent sm:text-3xl"
-    >
+    <h1 transition:name={slugifyStr(title)} class="text-display-s">
       {title}
     </h1>
-    <div class="flex items-center gap-4">
+    <div class="mt-4 flex items-center gap-6">
       <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" class="my-2" />
       <EditPost class="max-sm:hidden" {hideEditPost} {post} />
     </div>
-    <article id="article" class="mx-auto prose mt-8 max-w-4xl">
+    <article id="article" class="prose mt-8 max-w-[42rem]">
       <Content />
     </article>
 
-    <hr class="my-8 border-dashed" />
+    <hr class="rule-hair my-8" aria-hidden="true" />
 
     <EditPost class="sm:hidden" {hideEditPost} {post} />
 
@@ -131,24 +118,27 @@ const nextPost =
 
       <button
         id="back-to-top"
-        class="focus-outline py-1 whitespace-nowrap hover:opacity-75"
+        class="focus-outline link py-1 whitespace-nowrap"
       >
-        <IconChevronLeft class="inline-block rotate-90" />
         <span>Back to Top</span>
       </button>
     </div>
 
-    <hr class="my-6 border-dashed" />
+    <hr class="rule-hair my-6" aria-hidden="true" />
 
     <!-- Previous/Next Post Buttons -->
     <div data-pagefind-ignore class="grid grid-cols-1 gap-6 sm:grid-cols-2">
       {
         prevPost && (
-          <a href={prevPost.href} class="flex w-full gap-1 hover:opacity-75">
-            <IconChevronLeft class="inline-block flex-none" />
+          <a
+            href={prevPost.href}
+            class="surface group flex w-full gap-1 p-4 hover:bg-paper-2"
+          >
             <div>
-              <span>Previous Post</span>
-              <div class="text-sm text-accent/85">{prevPost.title}</div>
+              <span class="byline">Previous Post</span>
+              <div class="text-base leading-snug font-medium text-ink">
+                {prevPost.title}
+              </div>
             </div>
           </a>
         )
@@ -157,13 +147,14 @@ const nextPost =
         nextPost && (
           <a
             href={nextPost.href}
-            class="flex w-full justify-end gap-1 text-right hover:opacity-75 sm:col-start-2"
+            class="surface group flex w-full justify-end gap-1 p-4 text-right hover:bg-paper-2 sm:col-start-2"
           >
             <div>
-              <span>Next Post</span>
-              <div class="text-sm text-accent/85">{nextPost.title}</div>
+              <span class="byline">Next Post</span>
+              <div class="text-base leading-snug font-medium text-ink">
+                {nextPost.title}
+              </div>
             </div>
-            <IconChevronRight class="inline-block flex-none" />
           </a>
         )
       }
@@ -179,11 +170,11 @@ const nextPost =
     // Create the main container div
     const progressContainer = document.createElement("div");
     progressContainer.className =
-      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+      "progress-container fixed top-0 z-10 h-0.5 w-full bg-background";
 
     // Create the progress bar div
     const progressBar = document.createElement("div");
-    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.className = "progress-bar h-0.5 w-0 bg-accent";
     progressBar.id = "myBar";
 
     // Append the progress bar to the progress container
@@ -248,7 +239,7 @@ const nextPost =
 
       const copyButton = document.createElement("button");
       copyButton.className =
-        "copy-code absolute right-3 -top-3 rounded bg-muted px-2 py-1 text-xs leading-4 text-foreground font-medium";
+        "copy-code absolute right-3 -top-3 bg-paper-3 px-2 py-1 text-xs leading-4 text-foreground font-medium";
       copyButton.innerHTML = copyButtonLabel;
       codeBlock.setAttribute("tabindex", "0");
       codeBlock.appendChild(copyButton);

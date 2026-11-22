@@ -2,7 +2,6 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
-import IconCalendar from "@/assets/icons/IconCalendar.svg";
 import { SITE } from "@/config";
 
 dayjs.extend(utc);
@@ -11,6 +10,8 @@ dayjs.extend(timezone);
 export interface Props {
   class?: string;
   size?: "sm" | "lg";
+  /** "agate" is the listings face for ruled rows; "byline" is the reading voice. */
+  variant?: "agate" | "byline";
   timezone: string | undefined;
   pubDatetime: string | Date;
   modDatetime: string | Date | undefined | null;
@@ -19,7 +20,7 @@ export interface Props {
 const {
   pubDatetime,
   modDatetime,
-  size = "sm",
+  variant = "byline",
   class: className = "",
   timezone: postTimezone,
 } = Astro.props;
@@ -32,23 +33,20 @@ const datetime = dayjs(latestDatetime).tz(postTimezone || SITE.timezone);
 const date = datetime.format("D MMM, YYYY"); // e.g., '22 Mar, 2025'
 ---
 
-<div class:list={["flex items-end space-x-2 opacity-80", className]}>
-  <IconCalendar
-    class:list={[
-      "inline-block size-6 min-w-[1.375rem]",
-      { "scale-90": size === "sm" },
-    ]}
-  />
+<div class:list={["whitespace-nowrap", className]}>
   {
     modDatetime && modDatetime > pubDatetime ? (
-      <span class:list={["text-sm italic", { "sm:text-base": size === "lg" }]}>
-        Updated:
+      <span class:list={[variant === "agate" ? "agate" : "byline"]}>
+        Updated:{" "}
       </span>
     ) : (
       <span class="sr-only">Published:</span>
     )
   }
-  <span class:list={["text-sm italic", { "sm:text-base": size === "lg" }]}>
-    <time datetime={datetime.toISOString()}>{date}</time>
-  </span>
+  <time
+    datetime={datetime.toISOString()}
+    class:list={[variant === "agate" ? "agate" : "byline"]}
+  >
+    {date}
+  </time>
 </div>

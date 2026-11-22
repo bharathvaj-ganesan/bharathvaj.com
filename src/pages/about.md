@@ -4,14 +4,14 @@ title: "👋 About Me"
 description: "Learn about Bharathvaj Ganesan's software engineering background, technical leadership, and work in applied AI."
 ---
  
-Ever since I wrote my first "Hello World," I've been hooked on understanding how software really works. That curiosity led me to a degree in Computer Science Engineering, and over the past 7+ years, it’s evolved into a passion for building purposeful, technically robust products.
+Ever since I wrote my first "Hello World," I've been hooked on understanding how software really works. That curiosity led me to a degree in Computer Science Engineering, and over the past 8+ years, it’s evolved into a passion for building purposeful, technically robust products.
 
-Currently serving as a **Senior Lead Software Engineer at [Chargebee](https://chargebee.com)**, I lead Applied AI initiatives — building intelligent Copilots, scalable AI workflows, and a robust AI platform that accelerates innovation across the organization.
+Currently serving as a **Senior Lead Software Engineer at [Chargebee](https://chargebee.com)**, I lead AI Engineering - building intelligent Copilots, scalable AI workflows, and a robust AI platform that accelerates innovation across the organization.
 
 ---
 
 ### 🛠️ Technical & Leadership Experience  
-Over the last **7+ years**, I’ve worked across:  
+Over the last **8+ years**, I’ve worked across:  
 - 🌱 Early-stage startups  
 - 🏢 Large-scale enterprise environments  
 - 🏗️ Built next-gen web apps from scratch  

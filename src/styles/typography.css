@@ -1,56 +1,183 @@
 @plugin '@tailwindcss/typography';
 
-@layer base {
-  .prose {
-    @apply prose-headings:!mb-3 prose-headings:!text-foreground prose-p:!text-foreground prose-a:!text-foreground prose-a:!decoration-dashed prose-a:underline-offset-8 hover:prose-a:text-accent prose-blockquote:!border-l-accent/50 prose-blockquote:opacity-80 prose-figcaption:!text-foreground prose-figcaption:opacity-70 prose-strong:!text-foreground prose-code:rounded prose-code:bg-muted/75 prose-code:p-1 prose-code:!text-foreground prose-code:before:!content-none prose-code:after:!content-none prose-ol:!text-foreground prose-ul:overflow-x-clip prose-ul:!text-foreground prose-li:marker:!text-accent prose-table:text-foreground prose-th:border prose-th:border-border prose-td:border prose-td:border-border prose-img:mx-auto prose-img:!my-2 prose-img:border-2 prose-img:border-border prose-hr:!border-border;
-  }
-  .prose a {
-    @apply break-words hover:!text-accent;
-  }
-  .prose thead th:first-child,
-  tbody td:first-child,
-  tfoot td:first-child {
-    padding-inline-start: 0.5714286em !important;
-  }
-  .prose h2#table-of-contents {
-    @apply mb-2;
-  }
-  .prose details {
-    @apply inline-block cursor-pointer text-foreground select-none;
-  }
-  .prose summary {
-    @apply focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent focus-visible:outline-dashed;
-  }
-  .prose h2#table-of-contents + p {
-    @apply hidden;
-  }
+/* Prose takes the tokens through the plugin's own variables, so the light and
+   dark grounds both follow without per-element colour overrides. */
+.prose {
+  --tw-prose-body: var(--color-ink-2);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-lead: var(--color-ink-2);
+  --tw-prose-links: var(--color-accent);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-counters: var(--color-muted);
+  --tw-prose-bullets: var(--color-rule-2);
+  --tw-prose-hr: var(--color-rule);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-quote-borders: var(--color-rule-2);
+  --tw-prose-captions: var(--color-muted);
+  --tw-prose-code: var(--color-ink);
+  --tw-prose-pre-code: var(--color-ink);
+  --tw-prose-pre-bg: var(--color-well);
+  --tw-prose-th-borders: var(--color-rule-2);
+  --tw-prose-td-borders: var(--color-rule);
+  font-size: 1.0625rem;
+}
 
-  /* ===== Code Blocks & Syntax Highlighting ===== */
-  pre:has(code) {
-    @apply border border-border;
-  }
+.prose :is(p, li) {
+  line-height: 1.7;
+}
+.prose p {
+  max-width: none;
+}
+.prose :is(strong, b, a, th) {
+  font-weight: inherit;
+}
+.prose :is(strong, b) {
+  font-weight: 600;
+  color: var(--color-ink);
+}
 
-  .prose code,
-  .prose blockquote {
-    @apply break-words;
-  }
+.prose :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--tracking-display);
+  line-height: 1.15;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+.prose h2 {
+  font-size: var(--text-2xl);
+  margin-top: 2.2em;
+  margin-bottom: 0.6em;
+}
+.prose h3 {
+  font-size: var(--text-xl);
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
+}
+.prose h4 {
+  font-size: var(--text-lg);
+}
+.prose h2#table-of-contents {
+  margin-bottom: var(--space-xs);
+}
+.prose h2#table-of-contents + p {
+  display: none;
+}
 
+.prose a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  overflow-wrap: break-word;
+}
+.prose a:hover {
+  text-decoration-thickness: 2px;
+}
+.prose a:active {
+  text-decoration-thickness: 3px;
+}
+
+.prose blockquote {
+  font-style: normal;
+  border-inline-start: 2px solid var(--color-rule-2);
+  color: var(--color-ink-2);
+  overflow-wrap: break-word;
+}
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: none;
+}
+
+.prose img {
+  margin-inline: auto;
+  margin-block: var(--space-xs);
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: 12px;
+}
+.prose figcaption {
+  font: 400 var(--text-sm) / 1.4 var(--font-body);
+  color: var(--color-muted);
+}
+
+.prose ul {
+  overflow-x: clip;
+}
+
+.prose table {
+  color: var(--color-ink-2);
+}
+.prose table code {
+  /* add line breaks whenever necessary for code under a table */
+  word-break: break-all;
+}
+@media (min-width: 40rem) {
   .prose table code {
-    /* add line breaks whenever necessary for codes under table */
-    @apply break-all sm:break-normal;
+    word-break: normal;
   }
+}
+.prose thead th {
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--color-ink);
+  border-bottom: var(--rule-hair) solid var(--color-rule-2);
+}
+.prose thead th:first-child,
+.prose tbody td:first-child,
+.prose tfoot td:first-child {
+  padding-inline-start: 0.5714286em;
+}
 
-  pre > code {
-    white-space: pre;
-  }
+.prose details {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+}
 
-  /* Apply Dark Theme (if multi-theme specified) */
-  html[data-theme="dark"] pre:has(code),
-  html[data-theme="dark"] pre:has(code) span {
-    color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
-    font-style: var(--shiki-dark-font-style) !important;
-    font-weight: var(--shiki-dark-font-weight) !important;
-    text-decoration: var(--shiki-dark-text-decoration) !important;
-  }
+/* Code: inline chips and fenced blocks are bordered, rounded wells. */
+.prose code {
+  overflow-wrap: break-word;
+  font-weight: 400;
+}
+.prose :not(pre) > code {
+  padding: 0.12em 0.4em;
+  background: var(--color-paper-2);
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: 6px;
+  font-size: 0.86em;
+}
+.prose code::before,
+.prose code::after {
+  content: none;
+}
+.prose pre > code {
+  white-space: pre;
+  background: none;
+  border: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+pre:has(code) {
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: 12px;
+  font-size: var(--text-sm);
+  background-color: var(--color-well) !important;
+}
+
+/* Shiki paints the dark theme through variables; keep its token colours,
+   but let the ground stay the page's own. */
+html[data-theme="dark"] pre:has(code),
+html[data-theme="dark"] pre:has(code) span {
+  color: var(--shiki-dark) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+html[data-theme="dark"] pre:has(code) {
+  background-color: var(--color-well) !important;
+}
+html[data-theme="dark"] pre:has(code) span {
+  background-color: transparent !important;
 }

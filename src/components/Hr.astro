@@ -7,6 +7,8 @@ export interface Props {
 const { noPadding = false, ariaHidden = true } = Astro.props;
 ---
 
-<div class={`max-w-3xl mx-auto ${noPadding ? "px-0" : "px-4"}`}>
-  <hr class="border-border" aria-hidden={ariaHidden} />
+<div
+  class:list={["mx-auto w-full max-w-5xl", noPadding ? "px-0" : "px-4 sm:px-6"]}
+>
+  <hr class="rule-hair" aria-hidden={ariaHidden} />
 </div>

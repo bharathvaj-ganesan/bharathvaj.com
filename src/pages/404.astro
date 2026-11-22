@@ -13,20 +13,16 @@ import { SITE } from "@/config";
 >
   <Header />
 
-  <main
-    id="main-content"
-    class="mx-auto flex max-w-4xl flex-1 items-center justify-center"
-  >
-    <div class="mb-14 flex flex-col items-center justify-center">
-      <h1 class="text-9xl font-bold text-accent">404</h1>
+  <main id="main-content" class="frame flex flex-1 items-center">
+    <div class="mb-14 flex flex-col items-start">
+      <h1 class="text-display">404</h1>
       <span aria-hidden="true">¯\_(ツ)_/¯</span>
-      <p class="mt-4 text-2xl sm:text-3xl">Page Not Found</p>
-      <LinkButton
-        href="/"
-        class="my-6 text-lg underline decoration-dashed underline-offset-8"
+      <p
+        class="mt-4 font-display text-2xl font-semibold tracking-display sm:text-3xl"
       >
-        Go back home
-      </LinkButton>
+        Page Not Found
+      </p>
+      <LinkButton href="/" class="link my-6 text-lg"> Go back home </LinkButton>
     </div>
   </main>
 

@@ -6,10 +6,7 @@ import Footer from "@/components/Footer.astro";
 import Socials from "@/components/Socials.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import Card from "@/components/Card.astro";
-import Hr from "@/components/Hr.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
-import IconRss from "@/assets/icons/IconRss.svg";
-import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
 import { SOCIALS } from "@/constants";
 
@@ -19,132 +16,117 @@ const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(
   ({ data }) => data.featured && data.type !== "til"
 );
-const tilPosts = sortedPosts.filter(({ data }) => data.type === "til");
-const recentPosts = sortedPosts.filter(
-  ({ data }) => !data.featured && data.type !== "til"
-);
+const latestPosts = sortedPosts
+  .filter(({ data }) => !data.featured)
+  .slice(0, SITE.postPerIndex * 2);
 ---
 
 <Layout>
   <Header />
   <main id="main-content" data-layout="index">
-    <section id="hero" class="pt-8 pb-6">
-      <h1 class="my-4 inline-block text-3xl font-bold sm:my-8 sm:text-4xl">
-        Hey 👋, I’m Bharath.
-      </h1>
-
-      <p>
-        I'm a Software Engineer with 7+ years of experience, passionate about
-        building purposeful products with deep technical rigor. With a
-        background in Computer Science Engineering, my curiosity for how systems
-        work has shaped my journey.
-
-        <div class="mt-6">
-          Currently serving as a <b
-            >Senior Lead Software Engineer at <a
-              href="https://chargebee.com"
-              target="_blank">Chargebee</a
-            ></b
-          >, where I lead Applied AI initiatives — building intelligent
-          Copilots, scalable AI workflows, and a robust AI platform.
-        </div>
+    <section id="hero" class="frame pt-14 pb-14 text-center sm:pt-20 sm:pb-20">
+      <h1 class="mx-auto text-display">Hey, I’m Bharath.</h1>
+      <p class="mx-auto mt-5 max-w-[34ch] text-lead text-muted">
+        I lead AI Engineering at Chargebee and I write here about what I learn along the way."
       </p>
-      <p class="mt-2">
-        Read the blog posts or check
-        <LinkButton
-          class="underline decoration-dashed underline-offset-4 hover:text-accent"
-          href="/about"
-        >
-          my bio
-        </LinkButton> for more info.
-      </p>
-      <div class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3">
-        {
-          SOCIALS.length > 0 && (
-            <div class="flex flex-wrap items-center gap-x-2">
-              <span class="whitespace-nowrap">Social Links:</span>
-              <Socials />
-            </div>
-          )
-        }
-        <a
-          href="/til/rss.xml"
-          class="inline-flex items-center gap-2 whitespace-nowrap text-accent underline decoration-dashed underline-offset-4"
-        >
-          <IconRss width={20} height={20} aria-hidden="true" />
-          Subscribe via RSS
-        </a>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <a href="/posts/" class="btn btn-primary">Read the posts</a>
+        <a href="/about" class="btn btn-secondary">About me</a>
       </div>
     </section>
 
-    <Hr />
-
-    {
-      tilPosts.length > 0 && (
-        <>
-          <section id="recent-tils" class="pt-12 pb-6">
-            <h2 class="text-2xl font-semibold tracking-wide">
-              Today I Learned
-            </h2>
-            <p class="mt-2">
-              Short notes, useful discoveries, and things I learn while
-              building.
-            </p>
-            <ul>
-              {tilPosts.slice(0, SITE.postPerIndex).map(data => (
-                <Card variant="h3" {...data} />
-              ))}
-            </ul>
-            <div class="my-6">
-              <LinkButton href="/til/">
-                All TILs
-                <IconArrowRight class="inline-block" />
-              </LinkButton>
+    <div class="frame space-y-16 pb-20">
+      {
+        featuredPosts.length > 0 && (
+          <section id="featured">
+            <div class="flex items-baseline justify-between gap-4 pb-4">
+              <h2 class="text-2xl">Featured</h2>
             </div>
-          </section>
-          <Hr />
-        </>
-      )
-    }
-
-    {
-      featuredPosts.length > 0 && (
-        <>
-          <section id="featured" class="pt-12 pb-6">
-            <h2 class="text-2xl font-semibold tracking-wide">Featured</h2>
-            <ul>
+            <ul class="index-list">
               {featuredPosts.map(data => (
                 <Card variant="h3" {...data} />
               ))}
             </ul>
           </section>
-          {recentPosts.length > 0 && <Hr />}
-        </>
-      )
-    }
+        )
+      }
 
-    {
-      recentPosts.length > 0 && (
-        <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
-          <ul>
-            {recentPosts.map(
-              (data, index) =>
-                index < SITE.postPerIndex && <Card variant="h3" {...data} />
-            )}
-          </ul>
-        </section>
-      )
-    }
-
-    <div class="my-8 text-center">
-      <LinkButton href="/posts/">
-        All Posts
-        <IconArrowRight class="inline-block" />
-      </LinkButton>
+      {
+        latestPosts.length > 0 && (
+          <section id="latest">
+            <div class="flex items-baseline justify-between gap-4 pb-4">
+              <h2 class="text-2xl">TIL</h2>
+              <div class="flex items-baseline gap-5">
+                <LinkButton href="/posts/" class="link whitespace-nowrap">
+                  All Posts
+                </LinkButton>
+                <LinkButton href="/til/" class="link whitespace-nowrap">
+                  All TILs
+                </LinkButton>
+              </div>
+            </div>
+            <ul class="index-list">
+              {latestPosts.map(data => (
+                <Card variant="h3" showType {...data} />
+              ))}
+            </ul>
+          </section>
+        )
+      }
     </div>
+
+    <section id="bio" class="border-t border-border">
+      <div
+        class="frame py-16 sm:py-20 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-x-10"
+      >
+        <div class="mb-8 lg:mb-0">
+          <h2 class="text-2xl">About me</h2>
+          <img
+            src="/assets/profile.jpg"
+            alt="Bharathvaj Ganesan, smiling in sunglasses and a navy jacket in front of snowy mountains"
+            width="400"
+            height="400"
+            loading="lazy"
+            class="mt-6 size-32 rounded-full border border-border object-cover"
+          />
+        </div>
+        <div class="max-w-[60ch] space-y-5 text-lead text-ink-2">
+          <p>
+            I’m a Software Engineer with 8+ years of experience, passionate
+            about building purposeful products with deep technical rigor. With a
+            background in Computer Science Engineering, my curiosity for how
+            systems work has shaped my journey.
+          </p>
+          <p>
+            Currently serving as a <b
+              >Senior Lead Software Engineer at <a
+                href="https://chargebee.com"
+                target="_blank"
+                class="link">Chargebee</a
+              ></b
+            >, where I lead AI Engineering, building intelligent
+            Copilots, scalable AI workflows, and a robust AI platform.
+          </p>
+          <div
+            class="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2 text-base"
+          >
+            {
+              SOCIALS.length > 0 && (
+                <div class="flex flex-wrap items-center gap-x-2">
+                  <span class="whitespace-nowrap">Social Links:</span>
+                  <Socials />
+                </div>
+              )
+            }
+            <a href="/til/rss.xml" class="link whitespace-nowrap">
+              Subscribe via RSS
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  <Footer />
+  <Footer noMarginTop />
 </Layout>
 
 <script>

@@ -6,31 +6,44 @@ import Datetime from "./Datetime.astro";
 
 export interface Props extends CollectionEntry<"blog"> {
   variant?: "h2" | "h3";
+  /** Label a note with a TIL pill, for lists that mix posts and notes. */
+  showType?: boolean;
 }
 
-const { variant = "h2", data, id, filePath } = Astro.props;
+const { variant = "h2", showType = false, data, id, filePath } = Astro.props;
 
 const { title, description, pubDatetime, modDatetime, timezone } = data;
 
 const headerProps = {
   style: { viewTransitionName: slugifyStr(title) },
-  class: "text-lg font-medium decoration-dashed hover:underline",
+  class: "text-lg leading-snug font-medium text-ink",
 };
 ---
 
-<li class="my-6">
-  <a
-    href={getPath(id, filePath, true, data.type)}
-    class="inline-block text-lg font-medium text-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
-  >
+<li
+  class="py-5 sm:grid sm:grid-cols-[minmax(0,1fr)_auto] sm:items-baseline sm:gap-x-10"
+>
+  <div class="min-w-0">
+    <a
+      href={getPath(id, filePath, true, data.type)}
+      class="inline-block after:absolute after:inset-0"
+    >
+      {
+        variant === "h2" ? (
+          <h2 {...headerProps}>{title}</h2>
+        ) : (
+          <h3 {...headerProps}>{title}</h3>
+        )
+      }
+    </a>
+    <p class="mt-1 max-w-[62ch] text-muted">{description}</p>
+  </div>
+  <div class="mt-2 flex items-center gap-3 sm:mt-0">
     {
-      variant === "h2" ? (
-        <h2 {...headerProps}>{title}</h2>
-      ) : (
-        <h3 {...headerProps}>{title}</h3>
+      showType && data.type === "til" && (
+        <span class="pill px-2 py-0 text-xs">TIL</span>
       )
     }
-  </a>
-  <Datetime {pubDatetime} {modDatetime} {timezone} />
-  <p>{description}</p>
+    <Datetime {pubDatetime} {modDatetime} {timezone} variant="agate" />
+  </div>
 </li>

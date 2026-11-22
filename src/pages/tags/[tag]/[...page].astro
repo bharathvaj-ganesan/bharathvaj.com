@@ -42,7 +42,7 @@ const pageLabel = page.currentPage > 1 ? ` - Page ${page.currentPage}` : "";
     titleTransition={tag}
     pageDesc={`All the articles with the tag "${tagName}".`}
   >
-    <ul>
+    <ul class="index-list">
       {page.data.map(data => <Card {...data} />)}
     </ul>
   </Main>
