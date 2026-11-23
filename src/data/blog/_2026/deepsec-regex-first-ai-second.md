@@ -10,9 +10,8 @@ description: I learned what deepsec is, how its pipeline works, and how it keeps
 ---
 
 Today I came to know about [deepsec](https://vercel.com/oss/deepsec) from [AIEngineerGuide.com](https://aiengineerguide.com/til/vercel-deepsec/). It is an open-source vulnerability scanner that Vercel Labs released. It uses AI agents to review code, runs in your own infrastructure, and is built for large, existing codebases, where it hunts for bugs that have been hiding for a long time.
-![Vercel Developers' post introducing deepsec](@/assets/images/deepsec.png)
-
-*[https://x.com/vercel_dev/status/2051381241283539255](https://x.com/vercel_dev/status/2051381241283539255)*
+<blockquote class="twitter-tweet" data-dnt="true"><p>Vercel Developers' post introducing deepsec</p>&mdash; <a href="https://x.com/vercel_dev/status/2051381241283539255">View on X</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## What it is
 
