@@ -1,0 +1,76 @@
+---
+import type { CollectionEntry } from "astro:content";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+import Card from "./Card.astro";
+import { SITE } from "@/config";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+interface Props {
+  posts: CollectionEntry<"blog">[];
+}
+
+const { posts } = Astro.props;
+
+const groups = posts.reduce<
+  Array<{
+    key: string;
+    label: string;
+    posts: CollectionEntry<"blog">[];
+  }>
+>((result, post) => {
+  const { pubDatetime, modDatetime, timezone: postTimezone } = post.data;
+  const latestDatetime =
+    modDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime;
+  const zone = postTimezone || SITE.timezone;
+  const date = dayjs(latestDatetime).tz(zone);
+  const key = date.format("YYYY-MM-DD");
+  const today = dayjs().tz(zone);
+  const yesterday = today.subtract(1, "day");
+
+  let label = date.format("MMM D").toUpperCase();
+  if (key === today.format("YYYY-MM-DD")) {
+    label = "TODAY";
+  } else if (key === yesterday.format("YYYY-MM-DD")) {
+    label = "YESTERDAY";
+  } else if (date.year() !== today.year()) {
+    label = date.format("MMM D, YYYY").toUpperCase();
+  }
+
+  const currentGroup = result.at(-1);
+  if (currentGroup?.key === key) {
+    currentGroup.posts.push(post);
+  } else {
+    result.push({ key, label, posts: [post] });
+  }
+
+  return result;
+}, []);
+---
+
+<div class="space-y-10">
+  {
+    groups.map(group => {
+      const headingId = `posts-${group.key}`;
+
+      return (
+        <section aria-labelledby={headingId}>
+          <h2
+            id={headingId}
+            class="agate mb-3 text-xs font-medium tracking-[0.12em] text-muted"
+          >
+            {group.label}
+          </h2>
+          <ul class="index-list">
+            {group.posts.map(post => (
+              <Card variant="h3" showDate={false} {...post} />
+            ))}
+          </ul>
+        </section>
+      );
+    })
+  }
+</div>

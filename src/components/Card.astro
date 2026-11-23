@@ -8,9 +8,18 @@ export interface Props extends CollectionEntry<"blog"> {
   variant?: "h2" | "h3";
   /** Label a note with a TIL pill, for lists that mix posts and notes. */
   showType?: boolean;
+  /** Hide the row date when a parent heading already provides it. */
+  showDate?: boolean;
 }
 
-const { variant = "h2", showType = false, data, id, filePath } = Astro.props;
+const {
+  variant = "h2",
+  showType = false,
+  showDate = true,
+  data,
+  id,
+  filePath,
+} = Astro.props;
 
 const { title, description, pubDatetime, modDatetime, timezone } = data;
 
@@ -38,12 +47,16 @@ const headerProps = {
     </a>
     <p class="mt-1 max-w-[62ch] text-muted">{description}</p>
   </div>
-  <div class="mt-2 flex items-center gap-3 sm:mt-0">
-    {
-      showType && data.type === "til" && (
-        <span class="pill px-2 py-0 text-xs">TIL</span>
-      )
-    }
-    <Datetime {pubDatetime} {modDatetime} {timezone} variant="agate" />
-  </div>
+  {
+    (showType || showDate) && (
+      <div class="mt-2 flex items-center gap-3 sm:mt-0">
+        {showType && data.type === "til" && (
+          <span class="pill px-2 py-0 text-xs">TIL</span>
+        )}
+        {showDate && (
+          <Datetime {pubDatetime} {modDatetime} {timezone} variant="agate" />
+        )}
+      </div>
+    )
+  }
 </li>
