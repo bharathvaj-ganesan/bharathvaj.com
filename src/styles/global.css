@@ -1,8 +1,8 @@
-/* Hallmark · shape: Inbox (the writing set as lists inside bordered surfaces) · genre: modern-minimal · theme: custom · redesign: full · job: subscribe · idea: "a blog set like a quiet product, where the writing is the thing on show, in lists you scan like an inbox" · vibe: "white, hairline, tight Inter, quiet"
- * paper: oklch(99.4% 0.002 260) · accent: oklch(52% 0.15 48), a warm orange taken from the reference site and held to links and focus · display: Inter · body: Inter (by request: the reference site tiny-agents.nesin.io sets in it) · mono: JetBrains Mono for dates and code · hero: centred headline, one grey line, two pill actions · nav: sticky hairline bar, wordmark then links, search and theme at the right · footer: one compact row · imagery: none · signature: the latest posts and notes as two bordered list surfaces, every row a whole link
+/* Hallmark · shape: Inbox (the writing set as lists inside bordered surfaces) · genre: modern-minimal · theme: custom · redesign: full · job: subscribe · idea: "a blog set like a quiet product, where the writing is the thing on show, in lists you scan like an inbox" · vibe: "warm ruled paper, hairline, tight Geist, quiet"
+ * paper: #f5f2eb with a 32px ruled ground · accent: #e5482c, the Redline red held to links and focus · display: Geist · body: Geist · mono: Geist Mono for dates and code · hero: centred headline, one grey line, two pill actions · nav: sticky hairline bar, wordmark then links, search and theme at the right · footer: one compact row · imagery: none · signature: the latest posts and notes as two bordered list surfaces, every row a whole link
  * axes: light/grotesk-sans/warm · posture: restrained · contrast: pass · fold: pass · copy: verbatim (the bio is the owner's own words; the hero line is new, built from them) · v2.0.0 */
 /* Hallmark · pre-emit critique: P3 H4 E4 S3 R4 V4 · weakest: S, a modern-minimal skin is shared by a lot of product sites; leaned on the inbox-style list surfaces, each row a whole link with its date in mono, as the one move that belongs to a blog */
-/* Hallmark · waive 1 · display font Inter in tokens.css and the heading rules · the user asked for the look of the reference site, which sets its headings in Inter */
+/* Hallmark · waive 1 · display font Geist in tokens.css and the heading rules · the user asked for the look of the Redline reference, which sets its headings in Geist */
 /* Hallmark · waive 78 · section heads 16px under a 72px hero head · the home headings are the small title row of a list surface, like an inbox header, not section heads */
 /* Hallmark · waive 44c · hero ends 495px · the two list surfaces start inside the first screen, so the page opens on the writing and not on a bigger visual */
 /* Hallmark · waive 59 · gap 64px between sections · the home list surfaces sit in one row of two with a 24px gutter and the bio follows after a hairline */
@@ -17,6 +17,22 @@
 @import "./base.css" layer(base);
 @import "./typography.css";
 
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist-latin-wght-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/geist-mono-latin-wght-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 /* The old AstroPaper names keep working, pointed at the tokens. */
@@ -27,8 +43,11 @@
 }
 
 :root {
-  --display-weight: 600;
-  --color-well: oklch(95.8% 0.004 270);
+  --display-weight: 620;
+  --color-well: #faf8f3;
+  --color-grid: #e9e4d9;
+  --color-margin-line: #eeb2a4;
+  --color-margin-line-soft: #f4d3ca;
   --background: var(--color-paper);
   --foreground: var(--color-ink);
   --accent: var(--color-accent);
@@ -38,18 +57,21 @@
 /* The same system turned over: graphite ground, bone ink, the orange lifted. */
 html[data-theme="dark"] {
   color-scheme: dark;
-  --color-paper: oklch(17% 0.008 280);
-  --color-paper-2: oklch(21% 0.009 280);
-  --color-paper-3: oklch(25% 0.01 280);
-  --color-ink: oklch(95% 0.005 280);
-  --color-ink-2: oklch(82% 0.008 280);
-  --color-muted: oklch(68% 0.01 280);
-  --color-rule: oklch(30% 0.01 280);
-  --color-rule-2: oklch(38% 0.012 280);
-  --color-accent: oklch(78% 0.13 55);
-  --color-accent-ink: oklch(18% 0.02 55);
-  --color-focus: oklch(80% 0.14 55);
-  --color-well: oklch(21% 0.009 280);
+  --color-paper: #1c1a17;
+  --color-paper-2: #25221e;
+  --color-paper-3: #302c27;
+  --color-ink: #f5f2eb;
+  --color-ink-2: #d6cfc0;
+  --color-muted: #aaa498;
+  --color-rule: #38332d;
+  --color-rule-2: #514a40;
+  --color-accent: #f06a4f;
+  --color-accent-ink: #1c1a17;
+  --color-focus: #f06a4f;
+  --color-well: #25221e;
+  --color-grid: #292620;
+  --color-margin-line: #9d4938;
+  --color-margin-line-soft: #59362e;
   --shadow-card: none;
 }
 

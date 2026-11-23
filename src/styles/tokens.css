@@ -16,21 +16,21 @@
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --color-error: oklch(52% 0.19 27);
   --color-success: oklch(50% 0.12 150);
-  --color-paper: oklch(99.4% 0.002 260);
-  --color-paper-2: oklch(97.4% 0.003 270);
-  --color-paper-3: oklch(94.8% 0.004 270);
-  --color-ink: oklch(21% 0.01 280);
-  --color-ink-2: oklch(38% 0.01 280);
-  --color-muted: oklch(52% 0.012 280);
-  --color-rule-2: oklch(86% 0.005 280);
-  --color-rule: oklch(92.5% 0.004 280);
-  --color-accent: oklch(52% 0.15 48);
-  --color-accent-ink: oklch(99% 0.01 60);
-  --color-focus: oklch(60% 0.17 50);
-  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-paper: #f5f2eb;
+  --color-paper-2: #faf8f3;
+  --color-paper-3: #efebe3;
+  --color-ink: #1c1a17;
+  --color-ink-2: #45413a;
+  --color-muted: #7a7468;
+  --color-rule-2: #d6cfc0;
+  --color-rule: #e7e2d7;
+  --color-accent: #e5482c;
+  --color-accent-ink: #ffffff;
+  --color-focus: #e5482c;
+  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Geist", ui-sans-serif, system-ui, sans-serif;
   --font-outlier:
-    "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --radius-card: 16px;
   --radius-pill: 999px;
   --shadow-card:

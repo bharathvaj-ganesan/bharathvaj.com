@@ -13,7 +13,28 @@ html {
 }
 body {
   margin: 0;
-  background: var(--color-paper);
+  --margin-line: max(8px, calc((100vw - 64rem) / 2));
+  background-color: var(--color-paper);
+  background-image:
+    linear-gradient(
+      to right,
+      transparent var(--margin-line),
+      var(--color-margin-line) var(--margin-line),
+      var(--color-margin-line) calc(var(--margin-line) + 1px),
+      transparent calc(var(--margin-line) + 1px)
+    ),
+    linear-gradient(
+      to right,
+      transparent calc(var(--margin-line) + 5px),
+      var(--color-margin-line-soft) calc(var(--margin-line) + 5px),
+      var(--color-margin-line-soft) calc(var(--margin-line) + 6px),
+      transparent calc(var(--margin-line) + 6px)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 31px,
+      var(--color-grid) 31px 32px
+    );
   color: var(--color-ink);
   font-family: var(--font-body);
   font-size: var(--text-md);
