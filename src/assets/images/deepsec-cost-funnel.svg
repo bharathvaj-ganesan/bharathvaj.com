@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" role="img" aria-labelledby="cost-t cost-d">
+  <title id="cost-t">How deepsec narrows the work before paid AI steps</title>
+  <desc id="cost-d">A funnel of four stages. Every file is scanned for free. Only files with regex hits reach AI review. Findings are triaged cheaply. Only HIGH and above findings are revalidated.</desc>
+
+  <rect x="1" y="1" width="878" height="418" rx="14" fill="#f5f7fa" stroke="#d8dde4"/>
+  <text x="36" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#1c2230">Each paid stage sees less code than the one before it</text>
+
+  <!-- Stage 1: every file, free -->
+  <rect x="30" y="60" width="600" height="64" rx="10" fill="#dff3ea"/>
+  <text x="330" y="88" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#1c2230" text-anchor="middle">Every source file</text>
+  <text x="330" y="110" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#1d7f56" text-anchor="middle">FREE · regex scan</text>
+
+  <!-- Stage 2: files with hits, AI review -->
+  <rect x="100" y="140" width="460" height="64" rx="10" fill="#fbeedf"/>
+  <text x="330" y="168" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#1c2230" text-anchor="middle">Files with regex hits</text>
+  <text x="330" y="190" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#b4530b" text-anchor="middle">PAID · AI review</text>
+
+  <!-- Stage 3: findings, triage -->
+  <rect x="165" y="220" width="330" height="64" rx="10" fill="#fbeedf"/>
+  <text x="330" y="248" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#1c2230" text-anchor="middle">Findings</text>
+  <text x="330" y="270" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#b4530b" text-anchor="middle">~1¢ each · triage</text>
+
+  <!-- Stage 4: HIGH+ only, revalidate -->
+  <rect x="240" y="300" width="180" height="64" rx="10" fill="#fbeedf"/>
+  <text x="330" y="328" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#1c2230" text-anchor="middle">HIGH+ findings</text>
+  <text x="330" y="350" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#b4530b" text-anchor="middle">PAID · revalidate</text>
+
+  <text x="36" y="398" font-family="system-ui, -apple-system, sans-serif" font-size="12.5" fill="#5d6679">Green is free. Orange is paid. Triage is optional and runs on a cheaper model.</text>
+</svg>

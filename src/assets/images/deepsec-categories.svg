@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 390" role="img" aria-labelledby="cat-t cat-d">
+  <title id="cat-t">What deepsec looks for</title>
+  <desc id="cat-d">Six groups of issues, each with example matcher names: injection, auth and access, server-side requests, secrets and config, infrastructure and CI, and AI-specific.</desc>
+
+  <rect x="1" y="1" width="878" height="388" rx="14" fill="#f5f7fa" stroke="#d8dde4"/>
+  <text x="25" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#1c2230">What deepsec looks for</text>
+
+  <g font-family="system-ui, -apple-system, sans-serif">
+    <!-- Row 1 -->
+    <rect x="25" y="64" width="262" height="130" rx="10" fill="#ffffff" stroke="#cfd6e0"/>
+    <text x="43" y="98" font-size="16" font-weight="600" fill="#1c2230">Injection</text>
+    <text x="43" y="120" font-size="12.5" fill="#5d6679">SQL, command, XSS, path traversal</text>
+    <text x="43" y="150" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#2f56c9">sql-injection · rce · xss</text>
+    <text x="43" y="170" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#2f56c9">dangerous-html · path-traversal</text>
+
+    <rect x="309" y="64" width="262" height="130" rx="10" fill="#ffffff" stroke="#cfd6e0"/>
+    <text x="327" y="98" font-size="16" font-weight="600" fill="#1c2230">Auth and access</text>
+    <text x="327" y="120" font-size="12.5" fill="#5d6679">Bypasses, missing checks, IDOR</text>
+    <text x="327" y="150" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#2f56c9">auth-bypass · missing-auth</text>
+    <text x="327" y="170" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#2f56c9">cross-tenant-id · jwt-handling</text>
+
+    <rect x="593" y="64" width="262" height="130" rx="10" fill="#ffffff" stroke="#cfd6e0"/>
+    <text x="611" y="98" font-size="16" font-weight="600" fill="#1c2230">Server-side requests</text>
+    <text x="611" y="120" font-size="12.5" fill="#5d6679">SSRF, redirects, CORS, caching</text>
+    <text x="611" y="150" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#2f56c9">ssrf · open-redirect</text>
+    <text x="611" y="170" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#2f56c9">cors-wildcard · cache-key-poisoning</text>
+
+    <!-- Row 2 -->
+    <rect x="25" y="214" width="262" height="130" rx="10" fill="#ffffff" stroke="#cfd6e0"/>
+    <text x="43" y="248" font-size="16" font-weight="600" fill="#1c2230">Secrets and config</text>
+    <text x="43" y="270" font-size="12.5" fill="#5d6679">Leaks in code, logs, and bundles</text>
+    <text x="43" y="300" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#2f56c9">secrets-exposure · env-exposure</text>
+    <text x="43" y="320" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#2f56c9">secret-in-log · debug-endpoint</text>
+
+    <rect x="309" y="214" width="262" height="130" rx="10" fill="#ffffff" stroke="#cfd6e0"/>
+    <text x="327" y="248" font-size="16" font-weight="600" fill="#1c2230">Infrastructure and CI</text>
+    <text x="327" y="270" font-size="12.5" fill="#5d6679">Docker, Terraform, GitHub Actions</text>
+    <text x="327" y="300" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#2f56c9">dockerfile-run-as-root</text>
+    <text x="327" y="320" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#2f56c9">iam-permissions · tf-public-ingress</text>
+
+    <rect x="593" y="214" width="262" height="130" rx="10" fill="#ffffff" stroke="#cfd6e0"/>
+    <text x="611" y="248" font-size="16" font-weight="600" fill="#1c2230">AI-specific</text>
+    <text x="611" y="270" font-size="12.5" fill="#5d6679">Prompt injection, agent tools, MCP</text>
+    <text x="611" y="300" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#2f56c9">agentic-untrusted-prompt-input</text>
+    <text x="611" y="320" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#2f56c9">mcp-tool-handler · agent-loop-no-cap</text>
+  </g>
+
+  <text x="25" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="12.5" fill="#5d6679">Each finding is tagged CRITICAL, HIGH, MEDIUM, or BUG. Matchers run only for detected frameworks.</text>
+</svg>
