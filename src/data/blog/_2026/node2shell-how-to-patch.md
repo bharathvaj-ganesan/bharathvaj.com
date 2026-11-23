@@ -36,6 +36,43 @@ Examples include:
 
 A plain Node.js HTTP server does not automatically decompress incoming request bodies. That difference helped us prioritize internet-facing services instead of treating every process as equally exposed.
 
+## Our immediate fix: stop Express from decompressing Brotli
+
+Before we started replacing runtimes, we closed the reachable path. Our immediate fix was to stop Express from decompressing Brotli request bodies.
+
+For services that did not need compressed request bodies, we disabled request inflation in the JSON parser:
+
+```js
+app.use(express.json({ inflate: false }));
+```
+
+With `inflate` disabled, Express rejects compressed request bodies with `415 Unsupported Media Type` instead of passing them to Node.js's Brotli decoder. This also rejects gzip and deflate bodies, so we checked our clients before deploying it.
+
+Where clients still needed gzip or deflate, we rejected only `Content-Encoding: br` at the reverse proxy or in middleware mounted **before** `express.json()`:
+
+```js
+app.use((req, res, next) => {
+  const encodings = (req.get("content-encoding") ?? "")
+    .toLowerCase()
+    .split(",")
+    .map(value => value.trim());
+
+  if (encodings.includes("br")) {
+    return res
+      .status(415)
+      .json({ error: "Brotli request bodies are not supported" });
+  }
+
+  next();
+});
+
+app.use(express.json());
+```
+
+This was a containment measure, not the final patch. It protected the inbound Express path while the runtime rollout was in progress, but it did not protect direct uses of `createBrotliDecompress()` or outbound `fetch()` responses. We audited those paths separately and restricted attacker-controlled destinations where possible.
+
+We also monitored for repeated Node.js crashes, shell spawns, and unexpected outbound connections. A runtime monitor cannot see the original out-of-bounds write, but it can catch what a successful exploit does next.
+
 ## Which versions are fixed?
 
 The fixed Node.js releases are:
@@ -149,30 +186,6 @@ kubectl exec deploy/your-service -- node --version
 We also checked the image digest, because a reused tag can point to different content at different times. For distro-linked builds, we verified the installed Brotli package against the vendor advisory as well.
 
 The success condition was not "the pull request changed the version." It was "every running workload reports a fixed runtime or a vendor-patched Brotli library."
-
-## What if you cannot patch immediately?
-
-Compensating controls can reduce exposure, but they are not substitutes for replacing the vulnerable decoder.
-
-If clients do not need compressed request bodies, Express can reject all request decompression:
-
-```js
-app.use(express.json({ inflate: false }));
-```
-
-This rejects Brotli, gzip, and deflate bodies, so test client behavior before enabling it. A reverse proxy can also reject request bodies with `Content-Encoding: br` on routes that never require them.
-
-Those controls do not protect outbound requests. Audit server-side fetches, especially SSRF-sensitive features where a user supplies a URL. Restrict destinations and egress where possible.
-
-Finally, contain what successful code execution could do:
-
-- run the Node.js process as a non-root, unprivileged user
-- use a read-only filesystem where practical
-- keep secrets out of broad process environments
-- restrict network egress
-- alert when a Node.js process spawns a shell or makes an unexpected outbound connection
-
-Failed exploitation may appear as repeated Node.js crashes. Successful exploitation may look like shell execution, socket redirection, secret access, or a download from an unfamiliar host. Runtime monitoring is useful for those effects even when it cannot see the original out-of-bounds write.
 
 ## The easy mistakes
 
