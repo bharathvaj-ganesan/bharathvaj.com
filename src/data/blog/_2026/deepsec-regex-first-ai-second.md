@@ -61,3 +61,40 @@ npx deepsec init
 ```
 
 Run it from the root of the repo you want to scan. The docs are at [deepsec.sh](https://deepsec.sh).
+
+### Pick an agent
+
+deepsec talks to LLMs through interchangeable agent backends:
+
+| Backend | Default model | Used by |
+| --- | --- | --- |
+| `codex` (default) | `gpt-5.5` | `process`, `revalidate` |
+| `claude` | `claude-opus-4-8` | `process`, `revalidate` |
+| `pi` | `zai/glm-5.2` | `process`, `revalidate` |
+| `claude` (triage) | `claude-sonnet-4-6` | `triage` (Claude-only) |
+
+Choose the agent and model up front, so the repo analysis and the first processing pass use the same pair:
+
+```bash
+npx deepsec init --agent codex --model gpt-5.5
+```
+
+### Use your local subscription
+
+If the `claude` or `codex` CLI is already logged in on your machine, you can reuse that login instead of setting up an API key. Pass `--model-auth local`, or pick "Use local subscriptions" in the interactive prompt:
+
+```bash
+npx deepsec init --model-auth local
+```
+
+deepsec configures no credential and skips its env-var checks, so the machine-wide login is used directly. The exception is sandbox commands. They still need `AI_GATEWAY_API_KEY` (or an equivalent key).
+
+This one runs the `pi` agent with a DeepSeek model on your local subscription:
+
+```bash
+npx deepsec init --agent pi --model deepseek.v3.2 --model-auth local
+```
+
+Try Chinese models like this one first, unless you have access to cyber models. Common models like GPT and Claude might not work well here because of their cyber guardrails.
+
+![deepsec running in the terminal, showing its phases and live logs](@/assets/images/deepsec-terminal.png)
