@@ -98,3 +98,9 @@ npx deepsec init --agent pi --model deepseek.v3.2 --model-auth local
 Try Chinese models like this one first, unless you have access to cyber models. Common models like GPT and Claude might not work well here because of their cyber guardrails.
 
 ![deepsec running in the terminal, showing its phases and live logs](@/assets/images/deepsec-terminal.png)
+
+### View the report
+
+You can view and export the report easily using `npx deepsec report`.
+
+![deepsec report showing files analyzed, total findings and a count by severity](@/assets/images/deepsec-report.png)
