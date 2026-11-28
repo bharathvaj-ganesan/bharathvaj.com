@@ -13,7 +13,7 @@ description: An interactive system design course where each idea is an animated 
 
 It covers load balancing, caching, sharding, consensus, queues, and whole-system designs like a URL shortener, a news feed, and a chat system. At the time of writing, only a couple of modules are marked ready, so more are coming.
 
-She has built other cool things like [dilum.dev](https://dilum.dev/) that make it easy to understand the fundamentals. Her other interactive primers:
+Dilum has built other cool things like [dilum.dev](https://dilum.dev/) that make it easy to understand the fundamentals. Dilum's other interactive primers:
 
 - [Algo Lab](https://byte-sized-algorithms.vercel.app): data structures and algorithms, step by step
 - [Protocol Explorer](https://protocol-explorer-alpha.vercel.app): HTTP, DNS, TCP, TLS and more, packet by packet
