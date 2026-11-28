@@ -11,10 +11,7 @@ import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const posts = await getCollection(
-    "blog",
-    ({ data }) => !data.draft && data.type !== "til"
-  );
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
   return paginate(getSortedPosts(posts), { pageSize: SITE.postPerPage });
 }) satisfies GetStaticPaths;
 
@@ -27,7 +24,7 @@ const pageLabel = page.currentPage > 1 ? ` - Page ${page.currentPage}` : "";
   description={`Browse Bharathvaj Ganesan's articles on software engineering, web development, and applied AI${pageLabel.toLowerCase()}.`}
 >
   <Header />
-  <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
+  <Main pageTitle="Posts" pageDesc="All the articles and notes I've posted.">
     <GroupedPostList posts={page.data} />
   </Main>
 

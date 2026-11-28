@@ -12,14 +12,12 @@ const { noMarginTop = false } = Astro.props;
 
 const links = [
   { href: "/posts/", text: "Posts" },
-  { href: "/til/", text: "TIL" },
   { href: "/talks/", text: "Talks" },
   { href: "/tags/", text: "Tags" },
   ...(SITE.showArchives ? [{ href: "/archives/", text: "Archives" }] : []),
   { href: "/search/", text: "Search" },
   { href: "/about/", text: "About" },
   { href: "/rss.xml", text: "Posts feed" },
-  { href: "/til/rss.xml", text: "TIL feed" },
 ];
 ---
 

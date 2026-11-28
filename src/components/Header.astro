@@ -66,17 +66,12 @@ const navLink =
           <li class="col-span-2">
             <a
               href="/posts"
-              class:list={[navLink, { "active-nav": isActive("/posts") }]}
+              class:list={[
+                navLink,
+                { "active-nav": isActive("/posts") || isActive("/til") },
+              ]}
             >
               Posts
-            </a>
-          </li>
-          <li class="col-span-2">
-            <a
-              href="/til"
-              class:list={[navLink, { "active-nav": isActive("/til") }]}
-            >
-              TIL
             </a>
           </li>
           <li class="col-span-2">

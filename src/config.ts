@@ -5,7 +5,7 @@ export const SITE = {
   desc: "A personal blog sharing insights, updates, and perspectives on tech, software engineering, and everything in between — straight from the desk of a curious builder.",
   title: "Bharathvaj Ganesan",
   lightAndDarkMode: true,
-  postPerIndex: 4,
+  postPerIndex: 8,
   postPerPage: 4,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: true,

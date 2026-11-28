@@ -85,13 +85,6 @@ const nextPost =
     class="frame mt-10 pb-12"
     data-pagefind-body
   >
-    {
-      post.data.type === "til" && (
-        <a href="/til/" class="link mb-4 inline-block">
-          Today I Learned
-        </a>
-      )
-    }
     <h1 transition:name={slugifyStr(title)} class="text-display-s">
       {title}
     </h1>
